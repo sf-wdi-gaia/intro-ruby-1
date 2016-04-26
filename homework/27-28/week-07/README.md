@@ -16,14 +16,10 @@ Please refer to the [Instructions for Submitting Homework](/how-to/homework-subm
 3. More OO Practice (Don't spend more than 2 hrs on this)
     * [Wheel Of Fortune](https://github.com/sf-wdi-27-28/wheel_of_fortune)
 
-<!--
 ## Day 2
 
-1. Reading
-2. Bonus/Stretch
-
-Please use any remaining time to complete and review the exercises from dawn & dusk.
--->
+1. Take a look at this [SQL Reading](https://github.com/SF-WDI-LABS/shared_modules/tree/master/04-ruby-rails/intro-sql/25) and try some of the exercises.
+2. Use any remaining time to continue the Card Game Lab, and make sure to take a good long look at the solution.
 
 <!--
 ## Day 3
