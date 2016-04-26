@@ -1,11 +1,10 @@
 ## Intro to Rails
 
-###Learning Objetives
-By the end of this lecture you should be able to...
-
-- Articulate the Rails philosophy & the MVC pattern
-- Start a rails project with no database and create routes to dynamic templates.
-- Distinguish between Express and Rails
+| Objectives |
+| :--- |
+| Articulate the Rails philosophy and the MVC pattern. |
+| Start a Rails project with no database and create routes that render dynamic templates. |
+| Distinguish between Express and Rails. |
 
 ##Philosophy(5m)
 
@@ -60,7 +59,7 @@ So how do you tell Bundler to take your Gemfile and turn it into Gemfile.lock? R
 
 - Create a new rails app with `rails new railsFun --skip-activerecord`
     - the last flag tells the application not use activerecord
-    - activerecord is our ORM that manages our Models and our database, we'll learn more about it this afternoon
+    - activerecord is our ORM that manages our Models and our database, we'll learn more about it this later
 - `cd` into your `railsFun` folder and run
 - run `rails server` or just `rails s` and see what happens
 - This will start a server on `localhost:3000` head there and see what it says...
@@ -71,7 +70,7 @@ So how do you tell Bundler to take your Gemfile and turn it into Gemfile.lock? R
 
 ## Routing (10m)
 
-- In routes.rb we write logic to map our paths to controllers we will make.
+- In `config/routes.rb` we write logic to map our paths to controllers we will make.
 - Let's say when a user sends a `GET` request to the root route, `/`, we want the `welcome` controller's `index` method to run. In order to do that we could write:
 
 route.rb
