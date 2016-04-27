@@ -187,4 +187,4 @@ Wooo, nice!
 * Now instead of accessing each element by index, loop over your languages array and display each language.
 
 ##Resources
-(More reading)[further-reading.md]
+[More reading](further-reading.md)
