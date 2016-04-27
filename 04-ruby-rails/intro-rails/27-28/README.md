@@ -6,7 +6,7 @@
 | Start a Rails project with no database and create routes that render dynamic templates. |
 | Distinguish between Express and Rails. |
 
-##Philosophy(5m)
+## Philosophy(5m)
 
 Rails values...
 
@@ -73,7 +73,7 @@ So how do you tell Bundler to take your Gemfile and turn it into Gemfile.lock? R
 - In `config/routes.rb` we write logic to map our paths to controllers we will make.
 - Let's say when a user sends a `GET` request to the root route, `/`, we want the `welcome` controller's `index` method to run. In order to do that we could write:
 
-route.rb
+`route.rb`
 
 ```ruby
 get "/" => "welcome#index"`
@@ -90,7 +90,7 @@ If you did the last step correctly, you should see an error message: `*uninitial
 
 Reload the page again and find a different error message: `*The action 'index' could not be found for WelcomeController*`. We have created the welcome controller correctly, but there is no `index` method defined. Let's make one:
 
-welcome_controller.rb
+`welcome_controller.rb`
 
 ```ruby
 class WelcomeController < ApplicationController
@@ -99,9 +99,9 @@ class WelcomeController < ApplicationController
 end
 ```
 
-Wow another error! `*Missing template welcome/index...*` Since we have a `welcome` controller and an `index` method, Rails automatically will try to render a view with the path `app/views/welcome/index.html.erb`.  A directory `/welcome` should already exist, it was generated when the welcome controller was generated (thanks rails!). Inside of there add the file `index.html.erb` and inside of the file add some html:
+Wow, another error! `*Missing template welcome/index...*` Since we have a `welcome` controller and an `index` method, Rails automatically will try to render a view with the path `app/views/welcome/index.html.erb`.  A directory `/welcome` should already exist, it was generated when the welcome controller was generated (thanks rails!). Inside of there add the file `index.html.erb` and inside of the file add some html:
 
-app/views/welcome/index.html.erb
+`app/views/welcome/index.html.erb`
 
 ```html
 <h1>I make internets with Rails</h1>
@@ -111,9 +111,11 @@ Check out your root route one more time.
 
 ## View (5m)
 
-- This will not change the behavior, but you may wish to be more explicit in our controller by stating to `render` the template `index`
+- How did a totally empty function cause something to happen? This a case of some Rails magic! The default behavior of a controller's index function is to render the index template.
 
-app/controllers/welcome_controller.rb
+If you want to be more explicit, you can make our controller better by adding the `render` function with the argument `index`, indicating that's the template we want to render:
+
+`app/controllers/welcome_controller.rb`
 
 ```ruby
 def index
@@ -121,7 +123,9 @@ def index
 end
 ```
 
-Could we change these names to whatever we want? Absolutely!
+Could we point this index function at which ever template we want? Absolutely!
+
+Create a new template with whatever name you like and get it to render on the page.
 
 ## ERB (10m)
 
@@ -135,7 +139,24 @@ Let's say we want to pass a random number to our view from 0-100... Try adding t
 <img src="http://i.giphy.com/SPZFhfUJjsJO0.gif" alt="learning internet" style="width: 300px">
 ```
 
-Woah, what is happening? Ruby is being evaluated first and the result is printed into our html. the `<%` symbols escape our html. Remember from previous lessons we've seen on templating `<%` will *evaluate* the code while `<%=` will *interpolate* the result.
+What's happening here? Ruby is being evaluated first and the result is printed into our html. The `<% %>` symbols escape our html. These act a lot like the `{{}}` handlebars that we used to evaluate JavaScript in our HTML when we were using Angular or Handlebars.
+
+One additional complication that's different from `{{}}`: There are many varieties of `<% %>`.
+
+`<% %>` will *evaluate* the code. It does not leave behind any content on the html template once it's rendered.
+
+`<%= %>` will *interpolate* the result. That is, it will insert the output into the html document.
+
+If you want to run a loop, (imagine an ng-repeat type situation) you would use
+
+```html
+<b>Names of all the people</b>
+<% @people.each do |person| %>
+  Name: <%= person.name %><br/>
+<% end %>
+```
+
+The statements in the `<% %>` allow us to run some Ruby, the statements in the `<%= %>` leave behind some content that will be viewable in the generated html document.
 
 ## Passing Data to our View (10m)
 
@@ -152,7 +173,7 @@ class WelcomeController < ApplicationController
 end
 ```
 
-Notice we did not create a variable named `random` instead we created an instance variable named `@random`, the **@** is VERY important. Normal variables' scope do not reach the view, only **instance variables**' scope reach the view.
+Notice we did not create a variable named `random` instead we created an instance variable named `@random`, the **@** is VERY important. Normal variables cannot 'reach' the view, only **instance variables** can reach the view. This is an issue of **scoping**. The **@** puts a variable within a scope that the view can access.
 
 Finally we can refactor the `welcome/index.html.erb` file so that it will use this new variable.
 
@@ -161,7 +182,7 @@ Finally we can refactor the `welcome/index.html.erb` file so that it will use th
 <p>Random number is... <%= @random %></p>
 <img src="http://i.giphy.com/SPZFhfUJjsJO0.gif" alt="learning internet" style="width: 300px">
 ```
-Wooo, nice1!
+Wooo, nice!
 
 ##Challenge(15m)
 
