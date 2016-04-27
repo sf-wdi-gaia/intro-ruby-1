@@ -62,7 +62,7 @@ Bundler looks at the `Gemfile` and downloads all of the listed gems in addition 
 
 ## Routing
 
-Just like we saw before, our project will need to know what actions to take based on which routes a user visits.
+Just like we saw in Angular, our project will need to know what actions to take based on which routes a user visits.
 
 - In `config/routes.rb` we write logic to map our paths to controllers we will make.
 - Let's say when a user sends a `GET` request to the root route, `/`, we want the `welcome` controller's `index` method to run. In order to do that we could write:
@@ -120,7 +120,7 @@ Could we point this index function at which ever template we want? Absolutely!
 
 Create a new template with whatever name you like and get it to render on the page.
 
-## ERB (10m)
+## ERB
 
 `.html.erb` files are templates that are processed with embedded ruby, `.erb` to generate an `.html` file. This is known as **server-side templating**. This enables Rails to serve up dynamic views based on the data it is served.
 
@@ -151,7 +151,7 @@ If you want to run a loop, (imagine an ng-repeat type situation) you would use
 
 The statements in the `<% %>` allow us to run some Ruby, the statements in the `<%= %>` leave behind some content that will be viewable in the generated html document.
 
-## Passing Data to our View (10m)
+## Passing Data to our View
 
 There's certainly some business logic happening in our View. This is bad. Our view should only be concerned with presenting the data, but not actually generating it, that is a violation of **separation of concerns**. To fix this let's move the `Random.new.rand(100)` code to our controller and set that equal to a variable we will pass into our view.
 
@@ -177,7 +177,7 @@ Finally we can refactor the `welcome/index.html.erb` file so that it will use th
 ```
 Wooo, nice!
 
-##Challenge(15m)
+##Challenge
 
 * Create a new route: `/about` that with a `GET` request will hit the controller#action `welcome#about`.
 * Have `welcome#about` render a view in `welcome/about.html.erb`
