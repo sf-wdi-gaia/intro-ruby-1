@@ -170,3 +170,4 @@ Wooo, nice1!
 * Set a variable equal to your favorite computing language in your `welcome#about` controller, have that variable passed into the view.
 * Your view should now display your favorite language!
 * Bonus: create an array of your favorite languages in your controller. Pass them into your view and iterate through each of them inside a `<ul>`. Create an `<li>` tag for each favorite language.
+* Bonus Bonus: using your resourcefulness, research how to write loops in erb. Now loop over your languages array and display each language.
