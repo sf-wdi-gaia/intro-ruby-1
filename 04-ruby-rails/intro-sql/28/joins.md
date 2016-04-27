@@ -32,18 +32,18 @@ Let's use a simple foreign key relationship as follows between `people` and `pet
 
 
 ```sql
-create table people (
+CREATE TABLE people (
   id serial primary key,
-  name text,
-  age integer
+  name TEXT,
+  age INTEGER
 );
 
-create table pets (
-  id serial primary key,
-  name text,
-  age integer,
-  breed text,
-  people_id integer
+CREATE TABLE pets (
+  id SERIAL primary key,
+  name TEXT,
+  age INTEGER,
+  breed TEXT,
+  people_id INTEGER
 );
 
 INSERT INTO people ( name, age)
