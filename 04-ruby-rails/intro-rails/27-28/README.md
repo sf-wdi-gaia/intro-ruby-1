@@ -2,24 +2,23 @@
 
 | Objectives |
 | :--- |
+| *Students will be able to:* |
 | Articulate the Rails philosophy and the MVC pattern. |
 | Start a Rails project with no database and create routes that render dynamic templates. |
 | Distinguish between Express and Rails. |
 
-## Philosophy(5m)
+## Philosophy
 
 Rails values...
 
-* DRYness
-* Separation of Concerns & Modularity
-* Abstraction & encapsulation
-* Convention over configuration
+* **DRYness**: ([from the Rails Getting Started Guide](http://guides.rubyonrails.org/getting_started.html))
+  "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system." By not writing the same information over and over again, our code is more maintainable, more extensible, and less buggy.
 
-### Separation of Concerns
+* **Separation of Concerns & Modularity**: *writing modular code that focuses on one aspect within the application.* The benefit of this is similar to idea of **compartmentalization** with respect to a production line, which allows for *more rapid development* by being able to **divide and conquer** the construction of a product. It gives us replaceable parts which we can alter individually without breaking other parts.
 
-In writing a large application it is important to establish something known as **Separation of Concerns**, *writing modular code that focuses on one aspect within the application.* The benefit of this is similar to idea of **compartmentalization** with respect to a production line, which allows for *more rapid development* by being able to **divide and conquer** the construction of a product.
+* **Convention over configuration**: ([from the Rails Getting Started Guide](http://guides.rubyonrails.org/getting_started.html)) Rails has opinions about the best way to do many things in a web application, and defaults to this set of conventions, rather than require that you specify every minutiae through endless configuration files.
 
-##MVC (15m)
+## MVC
 
 Rails uses an __MVC__ architecture
 
@@ -31,44 +30,39 @@ Rails uses an __MVC__ architecture
 
 ![MVC Diagram](http://elibildner.files.wordpress.com/2012/06/screen-shot-2012-06-05-at-2-12-18-am.png)
 
-##Railstaurant Metaphor (10m)
-The **client** is a customer eating in the restaurant, **rails** is the kitchen, the **request** is the order made, the **router** is the waiter, the **controller** is a chef, the **model** is a recipe, the **database** is the giant walk-in refrigerator with ingredients, the **view** is plating the dish to look pretty, the **response** with a file is a waiter finally serving the dish to the customer.
+## Railstaurant Metaphor
+The **client** is a customer eating in the restaurant, **rails** is the kitchen, the **request** is the food ordered, the **router** is the waiter, the **controller** is a chef, the **model** is a recipe, the **database** is the giant walk-in refrigerator with ingredients, the **view** is plating the dish to look pretty, the **response** with a file is a waiter finally serving the dish to the customer.
 
-##Setup (10m)
+## Setup
 
 ### How to create a rails project
 
 `rails new NAME_OF_APP`
 
-But then it says, bundle install at the end, so, it's created all the files, and now it's telling bundler to install all of the gems that might be missing.
+This will launch a series of exciting events! Rails will construct a project in a directory with the project name that you just gave it. That project will include a standard set of folders and files that every Rails project has. At the end of process, Rails runs `bundle install`. That means Rails has is telling bundler to install all of the gems it will need to run the project.
 
-##Gems
-Gems are like NPMs. You have to put any gem you want to use in your Gemfile. You have to run bundle anytime you change your Gemfile. Your rails server needs to be restarted after any changes to your Gemfile.
+## Bundler and Gems
+Bundler is like NPM. Gems are like node packages from NPM. Any gem you want to use in your project must be listed in your Gemfile (which is like the `package.json` file that NPM used). You have to run `bundle install` anytime you change your Gemfile. Your rails server needs to be restarted after any changes to your Gemfile.
 
-### Bundler
+Bundler looks at the `Gemfile` and downloads all of the listed gems in addition to each's dependencies. It then generates a manifest file that is stored in Gemfile.lock. **Never** edit Gemfile.lock!
 
-Bundler is a separate gem from Rails, and can be used outside of
-Rails, but Rails is going to depend on it to manage the RubyGems that the application needs. The first thing that you need to know is that there are two files that matter to bundler: `Gemfile` and `Gemfile.lock`. Gemfile contains configuration information about what
-gems are part of our project, it is similar to the `package.json` file in Node.
 
-Bundler looks at the `Gemfile` loading all the included gems in addition to each's dependencies. It then generates a manifest file that is stored in Gemfile.lock. **Never** edit Gemfile.lock!
+## Running Rails
 
-So how do you tell Bundler to take your Gemfile and turn it into Gemfile.lock? Run: `bundle install`. When we create a rails application it will run this command for us unless we specify otherwise.
-
-## Running Rails (5m)
-
-- Create a new rails app with `rails new railsFun --skip-activerecord`
+- Create a new rails app with `rails new rails-fun --skip-activerecord`
     - the last flag tells the application not use activerecord
-    - activerecord is our ORM that manages our Models and our database, we'll learn more about it this later
-- `cd` into your `railsFun` folder and run
+    - activerecord is our ORM that manages our Models and our database, we'll learn more about that later
+- `cd` into your `rails-fun` folder and run
 - run `rails server` or just `rails s` and see what happens
 - This will start a server on `localhost:3000` head there and see what it says...
 
-## Rails File Structure (10m)
+## Rails File Structure
 
 ![Rails File Structure](http://i.imgur.com/whOL4DQ.png)
 
-## Routing (10m)
+## Routing
+
+Just like we saw in Angular, our project will need to know what actions to take based on which routes a user visits.
 
 - In `config/routes.rb` we write logic to map our paths to controllers we will make.
 - Let's say when a user sends a `GET` request to the root route, `/`, we want the `welcome` controller's `index` method to run. In order to do that we could write:
@@ -76,13 +70,12 @@ So how do you tell Bundler to take your Gemfile and turn it into Gemfile.lock? R
 `route.rb`
 
 ```ruby
-get "/" => "welcome#index"`
+get "/" => "welcome#index"
 ```
+
 Try saving the file and heading to your root route. What error do you get?
 
-**Pro tip:** run `rake route` in your rails app to see a list of all the application's routes
-
-## Controllers (10m)
+## Controllers
 
 If you did the last step correctly, you should see an error message: `*uninitialized constant WelcomeController*`. This means that we need to create a controller with the name `welcome` as that is where we told our route to go in the first place!
 
@@ -109,7 +102,7 @@ Wow, another error! `*Missing template welcome/index...*` Since we have a `welco
 ```
 Check out your root route one more time.
 
-## View (5m)
+## View
 
 - How did a totally empty function cause something to happen? This a case of some Rails magic! The default behavior of a controller's index function is to render the index template.
 
@@ -127,7 +120,7 @@ Could we point this index function at which ever template we want? Absolutely!
 
 Create a new template with whatever name you like and get it to render on the page.
 
-## ERB (10m)
+## ERB
 
 `.html.erb` files are templates that are processed with embedded ruby, `.erb` to generate an `.html` file. This is known as **server-side templating**. This enables Rails to serve up dynamic views based on the data it is served.
 
@@ -158,7 +151,7 @@ If you want to run a loop, (imagine an ng-repeat type situation) you would use
 
 The statements in the `<% %>` allow us to run some Ruby, the statements in the `<%= %>` leave behind some content that will be viewable in the generated html document.
 
-## Passing Data to our View (10m)
+## Passing Data to our View
 
 There's certainly some business logic happening in our View. This is bad. Our view should only be concerned with presenting the data, but not actually generating it, that is a violation of **separation of concerns**. To fix this let's move the `Random.new.rand(100)` code to our controller and set that equal to a variable we will pass into our view.
 
@@ -184,11 +177,14 @@ Finally we can refactor the `welcome/index.html.erb` file so that it will use th
 ```
 Wooo, nice!
 
-##Challenge(15m)
+##Challenge
 
 * Create a new route: `/about` that with a `GET` request will hit the controller#action `welcome#about`.
 * Have `welcome#about` render a view in `welcome/about.html.erb`
 * Set a variable equal to your favorite computing language in your `welcome#about` controller, have that variable passed into the view.
 * Your view should now display your favorite language!
-* Bonus: create an array of your favorite languages in your controller. Pass them into your view and iterate through each of them inside a `<ul>`. Create an `<li>` tag for each favorite language.
-* Bonus Bonus: using your resourcefulness, research how to write loops in erb. Now loop over your languages array and display each language.
+* Create an array of your favorite languages in your controller. Pass them into your view and put each of them inside its own `<li>` tag. (example: `<li> <%=@languages[0]%> </li>`)
+* Now instead of accessing each element by index, loop over your languages array and display each language.
+
+##Resources
+(More reading)[further-reading.md]
