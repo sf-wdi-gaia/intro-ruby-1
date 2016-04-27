@@ -24,7 +24,7 @@ Please refer to the [Instructions for Submitting Homework](/how-to/homework-subm
 
 ## Day 3
 
-1. 1. <a href="http://railsforzombies.org/levels/1">Rails for Zombies</a> -- A light introduction to Active Record.
+1. <a href="http://railsforzombies.org/levels/1">Rails for Zombies</a> -- A light introduction to Active Record.
 2. After you finish, think about these questions:
   - How would you validate that a password has a length of six characters?
   - How would you create a relationship where one Zombie has many Tweets and that a Tweet belongs to a Zombie?
