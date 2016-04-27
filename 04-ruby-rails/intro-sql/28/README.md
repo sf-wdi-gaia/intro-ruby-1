@@ -118,7 +118,7 @@ CREATE TABLE author (
 We can ALTER this table after is created.
 
 ```sql
-ALTER TABLE author ADD COLUMN last_name varchar(255);
+ALTER TABLE author ADD COLUMN last_name VARCHAR(255);
 ```
 An author doesn't need a description column, so let's remove it.
 
@@ -152,8 +152,8 @@ The library's having a fundraiser! Here's another table we might have in the dat
 CREATE TABLE products (
   id SERIAL primary key,
   name VARCHAR(255),
-  price numeric NOT NULL DEFAULT 'NaN',
-  quantity integer NOT NULL DEFAULT 0
+  price NUMERIC NOT NULL DEFAULT 'NaN',
+  quantity INTEGER NOT NULL DEFAULT 0
 );
 ```
 #Inserting Data into RDB
