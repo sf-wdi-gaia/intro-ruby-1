@@ -21,14 +21,18 @@ Please refer to the [Instructions for Submitting Homework](/how-to/homework-subm
 1. Take a look at this [SQL Reading](https://github.com/SF-WDI-LABS/shared_modules/tree/master/04-ruby-rails/intro-sql/25) and try some of the exercises.
 2. Use any remaining time to continue the Card Game Lab, and make sure to take a good long look at the solution.
 
-<!--
+
 ## Day 3
 
-1. Reading
-2. Bonus/Stretch
+1. 1. <a href="http://railsforzombies.org/levels/1">Rails for Zombies</a> -- A light introduction to Active Record.
+2. After you finish, think about these questions:
+  - How would you validate that a password has a length of six characters?
+  - How would you create a relationship where one Zombie has many Tweets and that a Tweet belongs to a Zombie?
+  - What does 'erb' stand for and how is it similar to handlebars?
+  - How is using ActiveRecord similar to your experience with MongoDB?  How is it different?
 
 Please use any remaining time to complete and review the exercises from dawn & dusk.
--->
+
 
 <!--
 ## Day 4
