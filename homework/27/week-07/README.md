@@ -24,7 +24,7 @@ Please refer to the [Instructions for Submitting Homework](/how-to/homework-subm
 1. Tomorrow we begin using Ruby on Rails, a Ruby framework that will help us develop web applications! To get yourself prepared for that introduction, please read and follow along with chapters 1-4 of the [rails getting started guide](http://guides.rubyonrails.org/getting_started.html).Pay special attention to the following questions:
   * What are the guiding principles of Ruby on Rails?
   * What does the terminal command `rails new blog` do?
-  * What's the big deal about Models, Views, and Controllers?
+  * What's the big deal about Models, Views, and Controllers? For more on that[]
 
 
 2. Finish the [Monster OOP lab](https://github.com/sf-wdi-27-28/monster-oop) and make a pull request to submit your work. Try the stretches if you have time, but they're not required.
@@ -32,14 +32,14 @@ Please refer to the [Instructions for Submitting Homework](/how-to/homework-subm
 
 
 
-<!--
+
 ## Day 3
 
-1. Reading
-2. Bonus/Stretch
+1. **Read** sections 1-3 and 5-8 of the [ActiveRecord Rails Guide](http://guides.rubyonrails.org/active_record_basics.html).
+2. **Submit** homework.md from [your blog app](https://github.com/sf-wdi-27-28/rails_simple_blog) as a pull request.
+3. **Stretch**: repeat the work completed on the blog app once more with instructions - time yourself. Then complete the blog app a third time without instructions and aim to finish it faster! See how well you do!
 
-Please use any remaining time to complete and review the exercises from dawn & dusk.
--->
+Please use any remaining time to review the exercises from today.
 
 <!--
 ## Day 4
