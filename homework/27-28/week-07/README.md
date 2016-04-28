@@ -34,16 +34,17 @@ Please refer to the [Instructions for Submitting Homework](/how-to/homework-subm
 Please use any remaining time to complete and review the exercises from dawn & dusk.
 
 
-<!--
+
 ## Day 4
 
-1. Reading
+1. Reading:
+   - Read sections 1-3 and 5-8 of the <a href="http://guides.rubyonrails.org/active_record_basics.html" target="_blank">Rails Active Records guide</a>. This should be a gentle review of what we covered today in the morning module.  
+   - Read this lesson on <a href="https://github.com/SF-WDI-LABS/shared_modules/tree/master/04-ruby-rails/rails-view-helpers-and-partials/27" target="_blank">Rails Partials and Helpers</a>.
 2. Friday Review Prep
-    - Complete the [Week 1 Self-Assessment](#PENDING) and identify 2 topics you want to review tomorrow
-    - Ask and/or upvote 3 questions on QuestionCookie: http://www.questioncookie.com/wdi-27-28-w7-review
+   - Complete the [Week 7 Self-Assessment](https://docs.google.com/forms/d/1iRvM5F-4DqcsaNyI2WCBD2mXeLxlVPgUytRip_5_Iz4/viewform?edit_requested=true) and identify 2 topics you want to review tomorrow
+3. **OPTIONAL** If you would like additional practice, consider running through <a       href="https://github.com/sf-wdi-27-28/rails_simple_blog">this</a> lesson and create your own Rails blog app.  Today is a full plate of homework, so only do this if you're totes stoked about Ruby on Rails!
+4. Finish working on the Morning module (Talk model) exercises.
 
-Please use any remaining time to complete and review the exercises from dawn & dusk.
--->
 
 <!--
 ## Day 5 - Weekend Homework
