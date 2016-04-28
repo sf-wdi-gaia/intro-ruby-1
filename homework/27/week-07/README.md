@@ -48,9 +48,9 @@ Please use any remaining time to review the exercises from today.
     - **Complete** the [Week 7 Self-Assessment](#PENDING) and identify 2 topics you want to review tomorrow
     - **Ask and/or upvote** 3 questions on [QuestionCookie](http://www.questioncookie.com/wdi-27-28-w7-review).
 1. From this afternoon's [partials and helpers lab](https://github.com/sf-wdi-27-28/rails_partials_helpers), **refactor** at least one instance of each step in the “steps to refactor.” For example, you don’t need to find *every* `<a></a>` tag and refactor to `link_to`, but you need to do at least one.
-3. For review, **complete parts 1 (Deep in the CRUD) and 2 (Models) of the [Rails for Zombies](http://railsforzombies.org/) tutorial**. If you're enjoying that tutorial, feel free to finish it. The final two sections cover views and controllers and could also serve as good review.
+3. For review, **complete level 1 (Deep in the CRUD) and level 2 (Models) of the [Rails for Zombies](http://railsforzombies.org/) tutorial**. If you're enjoying macabre humor, strange theme song, and pace of that tutorial, feel free to finish it. The final three sections cover views, controllers, and routes and could also serve as good review.
 
-  *Suggestion*: watch the videos at slightly accelerated speed (up to 2x) if they feel slow to you. When you get to the exercises, refer to the [pdf of the slides]() if you get stuck. Only review the video when you get really stuck (it's time consuming to find the exact right piece of the video). Take notes as you work to make sure concepts stick!
+  *Suggestion*: watch the videos at slightly accelerated speed (up to 2x) if they feel slow to you. When you get to the exercises, refer to this [pdf of the slides](https://github.com/SF-WDI-LABS/shared_modules/blob/master/homework/27/week-07/docs/Rails-For-Zombies-Slides.pdf) if you get stuck. Only review the video when you get really stuck (it's time consuming to find the exact right piece of the video). Take notes as you work to make sure concepts stick!
 
 
 Please use any remaining time to complete and review the rest of the exercises from today.
