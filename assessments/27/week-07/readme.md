@@ -22,8 +22,7 @@
 
 
 
-
- **Use the `Pet` class code below to answer the next three questions.**
+  **Use the `Pet` class code below to answer the next three questions.**
 
 1. Use each of the following terms (or letters) to label one example of the term in the Pet class:
 
@@ -114,40 +113,36 @@
 
 
 
-11. Given the controller code and view below, replace the <a href=...> tag with the appropriate rails view helper.
+11. Given the controller code and view below, replace the `<a href=...>` tag with the appropriate Rails view helper.
 
-    ```ruby
-    # app/controllers/shoes_controller.rb
-    def index
-        @shoes = Shoe.all
-    end
+  ```ruby
+  # app/controllers/shoes_controller.rb
+  def index
+      @shoes = Shoe.all
+  end
+  ```
     
-    ```
+  
     
+  ```ruby
+  # views/shoes/index.html.erb
+  <% @shoes.each do |shoe| %>
+     <%= shoe.name %> - <a href="/shoes/<%= shoe.id %>">View this Shoe</a>
+  
+  
+     ______________________________________________________________________
 
+
+  <% end %>
+  ```
+
+1. Display the “_foosball.html.erb” partial in the view below.
     
-    ```ruby
-    # views/shoes/index.html.erb
-    <% @shoes.each do |shoe| %>
-       <%= shoe.name %> - <a href="/shoes/<%= shoe.id %>">View this Shoe</a>
-    
-    
-       ______________________________________________________________________
-
-
-    <% end %>
-    ```
+  ```html
+  <h2>View the Foosball below!</h2>
+  <div class=‘foos’>
 
 
 
-
-12. Display the “_foosball.html.erb” partial in the view below.
-    
-    ```html
-    <h2>View the Foosball below!</h2>
-    <div class=‘foos’>
-
-
-
-    </div>
-    ```
+  </div>
+  ```
