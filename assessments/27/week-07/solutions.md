@@ -33,7 +33,7 @@
 
   ```ruby
   def fastest(speeds)
-    speeds.max
+    p speeds.max
   end
   ```
 
