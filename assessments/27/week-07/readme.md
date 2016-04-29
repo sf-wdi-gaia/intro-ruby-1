@@ -28,11 +28,11 @@
 1. Use each of the following terms (or letters) to label one example of the term in the Pet class:
 
    a. instance variable			 
-   b. class variable
-   c. instance method			
-   d. class method
-   e. getter					
-   f. setter
+   b. class variable    
+   c. instance method		 	
+   d. class method    
+   e. getter					  
+   f. setter  
 
 1. Create an instance of the `Pet` class.
 
@@ -67,7 +67,7 @@
   end
   ```
 
-  Bonus: Create a Dog class that inherits from the Pet class.
+  Bonus: Create a `Dog` class that inherits from the `Pet` class.
 
 
 1. Define and briefly describe the MVC pattern. (Labeled diagrams work!)
@@ -83,78 +83,31 @@
 
 1. Briefly describe the purpose of each of the following in a Rails app:
 
-  * `Gemfile`  file
-  * `bundle install` (or `bundle`) commandconfig/routes.rb  file  
-  * `app/controllers/`  directory  
-  * `db/schema.rb`  file
+  * `Gemfile`  file   
+  * `bundle install` (or `bundle`) command   
+  * `config/routes.rb`  file    
+  * `app/controllers/`  directory   
+  * `db/schema.rb`  file   
 
   **For the next two questions, assume you have a Rails app with a `Plant` resource.**
 
 1. Fill in the table below:
 
-  | Goal | Route verb | Route path | Controller#Action
-Goal
-Route verb
-Route path
-Controller#Action
-Database Method(s)
-Read all plants in db
- GET     
-
-
-plants#index
-
-
-Read one plant in db
-
-
-
-plants#show
-Plant.find(id)
-Create a plant in db
+  | Goal | Route verb | Route path | Controller#Action | Database Method(s) |
+  | --- | --- | --- | --- | --- |
+  | Read all plants in db | `GET` |  | `plants#index`  |  |
+  | Read one plant in db |  |  | `plants#show`  | `Plant.find(id)` |
+  | Create a plant in db |  |  |   | `p = Plant.new(plant_data)` <br> `p.save` |
+  | Update a plant in db |  | `/plants/:id` |   |  |
+  | Delete a plant in db | `DELETE` |  | `plants#destroy`  |  |
+  | Display a new plant form |  | `/plants/new` |   | `# for form display` <br> `p = Plant.new` |
+  | Display an edit plant form | `GET` |  |   |  |
+  
 
 
 
 
-
-
-p = Plant.new(plant_data)
-p.save
-Update a plant in db
-
-
-/plants/:id
-
-
-
-
-Delete a plant in db
-DELETE
-
-
-plants#destroy
-
-
-
-Display a new plant form
-
-
-/products/new
-
-
-# for form display:
-p = Plant.new
-Display an edit plant form
-GET
-
-
-
-
-
-
-
-
-1. List at least 3 steps you’d take while adding a fully functional Garden resource to your app.
+1. List at least 3 steps you’d take while adding a fully functional `Garden` resource to your app.
 
 
 
@@ -162,32 +115,39 @@ GET
 
 
 11. Given the controller code and view below, replace the <a href=...> tag with the appropriate rails view helper.
-# app/controllers/shoes_controller.rb
-def index
-    @shoes = Shoe.all
-end
+
+    ```ruby
+    # app/controllers/shoes_controller.rb
+    def index
+        @shoes = Shoe.all
+    end
+    
+    ```
+    
+
+    
+    ```ruby
+    # views/shoes/index.html.erb
+    <% @shoes.each do |shoe| %>
+       <%= shoe.name %> - <a href="/shoes/<%= shoe.id %>">View this Shoe</a>
+    
+    
+       ______________________________________________________________________
 
 
-----------------------------------------
-
-
-# views/shoes/index.html.erb
-<% @shoes.each do |shoe| %>
-   <%= shoe.name %> - <a href="/shoes/<%= shoe.id %>">View this Shoe</a>
-
-
-   ______________________________________________________________________
-
-
-<% end %>
+    <% end %>
+    ```
 
 
 
 
 12. Display the “_foosball.html.erb” partial in the view below.
+    
+    ```html
     <h2>View the Foosball below!</h2>
     <div class=‘foos’>
 
 
 
     </div>
+    ```
