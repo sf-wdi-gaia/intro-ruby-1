@@ -51,10 +51,17 @@
 
 1. Create an instance of the `Pet` class.
 
+  ```ruby
+  morocco = Pet.new "Morocco"
+  ```
+
 
 1. Use the `play_with` method on the pet you just created and a toy of `"rope"`.
 
 
+  ```ruby
+  morocco.play_with("rope")
+  ```
 
 
   ```ruby
