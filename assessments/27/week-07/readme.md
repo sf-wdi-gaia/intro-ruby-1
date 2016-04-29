@@ -112,8 +112,7 @@
 
 
 
-
-11. Given the controller code and view below, replace the `<a href=...>` tag with the appropriate Rails view helper.
+1. Given the controller code and view below, replace the `<a href=...>` tag with the appropriate Rails view helper.
 
   ```ruby
   # app/controllers/shoes_controller.rb
