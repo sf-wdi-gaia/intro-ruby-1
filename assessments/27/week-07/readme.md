@@ -2,14 +2,16 @@
 
 1. Fill in the hash below with your name and cohort:
 
-  `my_info = { :name => “__________________________”,   :cohort => ______ }`
+  `my_info = { :name => “______________________________________”,   :cohort => ________ }`
 
 1. In Ruby, declare a variable called `favorite_food`, and set it equal to your favorite food. Then use your `favorite_food` variable to create a string proclaiming your favorite food: "My favorite food is ________."
 
+  <br><br><br>
 
 
 1. Write a Ruby regular expression that matches the first digit in a string. For example, your regex should match the `1` in `"Party like it’s 1999!"`
 
+  <br><br><br>
 
 1. Write a method called `fastest` that takes a `speeds` array parameter and _both_ prints and returns the fastest speed.  
 
@@ -19,7 +21,7 @@
     70
     => 70
   ```
-
+  <br><br><br>  <br><br><br>
 
 
   **Use the `Pet` class code below to answer the next three questions.**
@@ -35,9 +37,11 @@
 
 1. Create an instance of the `Pet` class.
 
-
+  <br><br><br>
+  
 1. Use the `play_with` method on the pet you just created and a toy of `"rope"`.
 
+  <br><br><br> 
 
 
 
@@ -67,11 +71,13 @@
   ```
 
   Bonus: Create a `Dog` class that inherits from the `Pet` class.
+  
+    <br><br><br>  <br><br><br>  
 
 
 1. Define and briefly describe the MVC pattern. (Labeled diagrams work!)
 
-
+  <br><br><br>  <br><br><br>  <br><br><br>  <br><br><br>
 
 
 
@@ -83,10 +89,15 @@
 1. Briefly describe the purpose of each of the following in a Rails app:
 
   * `Gemfile`  file   
-  * `bundle install` (or `bundle`) command   
+      <br><br><br>
+  * `bundle install` (or `bundle`) command  
+        <br><br><br>
   * `config/routes.rb`  file    
+         <br><br><br>
   * `app/controllers/`  directory   
+       <br><br><br>
   * `db/schema.rb`  file   
+     <br><br><br>
 
   **For the next two questions, assume you have a Rails app with a `Plant` resource.**
 
@@ -110,7 +121,7 @@
 
 
 
-
+  <br><br><br>  <br><br><br>  <br><br><br>
 
 1. Given the controller code and view below, replace the `<a href=...>` tag with the appropriate Rails view helper.
 
@@ -142,6 +153,8 @@
   <div class=‘foos’>
 
 
+  
+     ______________________________________________________________________
 
   </div>
   ```
