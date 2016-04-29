@@ -129,7 +129,7 @@
   | Read one plant in db | `GET` | `/plants/:id` | `plants#show`  | `Plant.find(id)` |
   | Create a plant in db | `POST` | `/plants` | `plants#create`  | `p = Plant.new(plant_data)` <br> `p.save` |
   | Update a plant in db | `PUT` or<br> `PATCH` | `/plants/:id` | `plants#update`  | `Plant.find(id).update(plant_data)` |
-  | Delete a plant in db | `DELETE` | `/plant/:id` | `plants#destroy`  | `Plant.find(id).destroy` |
+  | Delete a plant in db | `DELETE` | `/plants/:id` | `plants#destroy`  | `Plant.find(id).destroy` |
   | Display a new plant form | `GET` | `/plants/new` | `plants#new` | `# for form display` <br> `p = Plant.new` |
   | Display an edit plant form | `GET` | `/plants/:id/edit`  |  `plants#edit` | `# for form display` <br> `p = Plant.find(id)` |
   
