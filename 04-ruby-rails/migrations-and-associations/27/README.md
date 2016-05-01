@@ -554,10 +554,10 @@ To create N:N relationships in Rails, we use this pattern: `has_many :related_mo
 3. Still in the Rails console, test your data to make sure your associations worked:
 
   ```ruby
-  sally.courses.map(&:name)
+  sally.courses.map { |course| course.name }
   # => ["Algebra", "French"]
 
-  fred.courses.map(&:name)
+  fred.courses.map(&:name)  # short-hand!
   # => ["Science", "English", "French"]
 
   alice.courses.map(&:name)
