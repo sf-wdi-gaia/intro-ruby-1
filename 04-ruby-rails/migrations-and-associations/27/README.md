@@ -46,6 +46,7 @@ Finally you of course must run `rake db:migrate`.  When you run rake `db:migrate
 #### Practice 1
 
 Let's say we're building a website to sell used cars.  We know we need a few basic things to keep track of our cars; things like:
+
 * make
 * model
 * year
@@ -121,7 +122,7 @@ Example:
 
 `rails generate migration AddVinToCars`
 
-This generates an empty migration with the name `AddVinToCars`.  After running this you can edit the new migration to properly set the "color" datatype (likely String).
+This generates an empty migration with the name `AddVinToCars`.  After running this you can edit the new migration to properly set the "vin" datatype (likely String).
 
 ```ruby
 # generated empty migration
@@ -136,7 +137,7 @@ end
 
 Example:
 
-* add a color column to the Car model: `rails generate migration AddVinToCars color:string`
+* add a vin column to the Car model: `rails generate migration AddVinToCars vin:string`
 
 This generates a migration like:
 
@@ -163,7 +164,7 @@ class RemoveStreetAddressFromUsers < ActiveRecord::Migration
   end
 end
 ```
-> Note: you must still specify the `column_name:datatype` when doing a remove.
+> Note: you must still specify the `column_name:datatype` when doing a remove. (Migrations should be reversible.)
 
 
 
@@ -267,6 +268,9 @@ See http://stackoverflow.com/questions/17918117/rails-4-datatypes
 * rake db:drop - destroy the database (if you run this in production you're FIRED!)
 
 
+*****
+
+
 ## ActiveRecord Associations
 
 Objectives
@@ -291,7 +295,7 @@ Objectives
 
 **Always remember!** Whenever there is a `belongs_to` in the model, there should be a *FK in the matching migration!*
 
-![](https://chryus.files.wordpress.com/2014/02/img_1839.jpg)
+<img src="https://chryus.files.wordpress.com/2014/02/img_1839.jpg" style="max-width: 600px">
 
 #### 2-steps to setting up relationships in rails
 
