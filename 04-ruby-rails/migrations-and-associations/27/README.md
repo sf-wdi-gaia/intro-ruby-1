@@ -424,6 +424,11 @@ end
 
 Make sure you then update the models with the appropriate `has_many` and `belongs_to` relationships.  
 
+## Challenges, Part 1: 1:N
+
+Head over to the [One-To-Many Challenges](one_to_many_challenges.md) and work together in pairs.
+
+-----
 
 ## Many-To-Many (N:N) with 'through'
 
@@ -455,7 +460,7 @@ To create N:N relationships in Rails, we use this pattern: `has_many :related_mo
 
   `Enrollment` is the model for our *join* table. When naming your join table, you can either come up with a name that makes semantic sense (like "Enrollment"), or you can combine the names of the associated models (e.g. "StudentCourse").
 
-2. Open up the models in Sublime, and edit them so they include the proper associations:
+2. Open up the models in Atom, and edit them so they include the proper associations:
 
   ```ruby
   #
@@ -555,7 +560,7 @@ To create N:N relationships in Rails, we use this pattern: `has_many :related_mo
 
 ## Challenges, Part 2: Many-To-Many
 
-Head over to the [Many-To-Many Challenges](many-to-many-challenges.md) and work together in pairs.
+Head over to the [Many-To-Many Challenges](many_to_many_challenges.md) and work together in pairs.
 
 
 ## Stretch Challenge: Self-Referencing Associations
