@@ -1,4 +1,4 @@
-# Many-to-Many Challenges
+# <img src="https://cloud.githubusercontent.com/assets/7833470/10899314/63829980-8188-11e5-8cdd-4ded5bcb6e36.png" height="60"> Many-to-Many Challenges
 
 Our goal is to build the relationship between `actors` and `movies`. An actor can appear in many movies, and a movie can have many actors. How would you set up this relationship? Is there an additional data table we need besides `actors` and `movies`? **Hint:** Think back to the relationship between students and courses.
 
@@ -6,13 +6,13 @@ Here's what our models' attributes might look like for actors and movies:
   * `Actor`: first_name, last_name
   * `Movie`: title, description, year
 
-For these challenges, continue to work in your `practice` Rails app.
+For these challenges, continue to work in your `practice_associations` Rails app.
 
 ## Your Task
 
 1. Create models and migrations for three tables: `actors`, `movies`, and a *join* table. Think about what you should name your join table and what columns it should have.
 2. Implement a many-to-many relationship between `actors` and `movies`.
-3. Use the Rails console to create at least three `actors` and two `movies`. Each movie should have at least one actor associated with it. 
+3. Use the Rails console to create at least three `actors` and two `movies`. Each movie should have at least one actor associated with it.
 
 ## Stretch Challenges
 
@@ -27,4 +27,3 @@ For these challenges, continue to work in your `practice` Rails app.
   a.errors.messages
   # => What does this return?
   ```
-
