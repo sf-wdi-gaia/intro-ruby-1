@@ -460,7 +460,7 @@ To create N:N relationships in Rails, we use this pattern: `has_many :related_mo
 
   `Enrollment` is the model for our *join* table. When naming your join table, you can either come up with a name that makes semantic sense (like "Enrollment"), or you can combine the names of the associated models (e.g. "StudentCourse").
 
-2. Open up the models in Atom, and edit them so they include the proper associations:
+2. Open up the models in your text-editor, and edit them so they include the proper associations:
 
   ```ruby
   #
@@ -596,8 +596,8 @@ rails g migration AddAgeToOwner age:integer
 # never try to create a migration file yourself through the file system! it's really hard to get the name right!
 
 # -- EITHER WAY --
-### whether we're creating a new model or updating an existing one, we can manually edit our models and migrations in sublime
-# update associations in model --> this affects model interface
+### whether we're creating a new model or updating an existing one, we can manually edit our models and migrations in our text editor.
+# update associations in model files --> this affects model interface
 # update foreign keys in migrations --> this affects database tables
 
 # generate schema for database tables
