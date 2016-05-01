@@ -33,6 +33,8 @@
 5. Map each item in your database to its name:
 
   ```ruby
+  Item.all.map { |item| item.name }
+  # which can be shortened to
   Item.all.map(&:name)
   ```
 

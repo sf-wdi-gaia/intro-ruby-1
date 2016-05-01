@@ -1,10 +1,10 @@
 # <img src="https://cloud.githubusercontent.com/assets/7833470/10899314/63829980-8188-11e5-8cdd-4ded5bcb6e36.png" height="60"> One-to-Many Challenges
 
-If you haven't yet, set up a new Rails app in the terminal called `practice_associations`:
+If you haven't yet, set up a new Rails app in the terminal called `practice`:
 
   ```
-  $ rails new practice_associations -d postgresql
-  $ cd practice_associations
+  $ rails new practice -d postgresql -T
+  $ cd practice
   $ rake db:create
   ```
 
@@ -39,7 +39,7 @@ i.order
 **Once you've finished creating the models:**
   1. Create five items
   2. Create two orders
-  3. Assign three items to the order with id = 1 and two items to the order with id = 2
+  3. Assign three items to the order with id = 1 and two items to the order with id = 2  _(note you may have to adjust the ids if you've created and deleted many)_
   4. For one order, iterate through each of its items and print the item details to the console.
   4. Map each item in your database to its name.
 

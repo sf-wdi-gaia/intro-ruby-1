@@ -9,6 +9,7 @@ In this lesson we'll talk about changing the structure of the tables in the data
 1. Be able to explain when it is OK to edit a migration.
 1. Understand the basics of how to alter an existing column.
 1. Be able to create 1:n rails model relationships.
+1. Be able to create n:n rails model relationships with through.
 
 
 
@@ -38,7 +39,7 @@ The above command, you'll recall, creates 2 new files.
 
 Typically we'll edit both of these files as needed to get the database structure we want and set any validations we want to run in the model.
 
-Finally you of course must run `rake db:migrate`.  Then you commit the above files as well as the `db/schema.rb` file.
+Finally you of course must run `rake db:migrate`.  When you run rake `db:migrate` it alters the `schema.rb` file.  Then you commit the above files as well as the `db/schema.rb` file.
 
 >Note: Never directly edit schema.rb
 
@@ -49,7 +50,13 @@ Let's say we're building a website to sell used cars.  We know we need a few bas
 * model
 * year
 
-Let's write a migration to track these on a new **Car** model.  But first create a new rails app; from your dev directory: `rails new car_app -T -d=postgresql`.  (Of course you should CD into this app.)
+Let's write a migration to track these on a new **Car** model.  But first create a new rails app; from the directory you do your wdi work in: 
+
+```
+$ rails new practice -T -d=postgresql
+```
+
+(Of course you should CD into this app.)
 >We are using the -T (aka --skip-test-unit) and -d postgresql (aka --database=postgresql) options today -- postgresql is our preferred database. We'll talk about tests another day.
 
 <details><summary>What's the command to generate the new car model and migration?  Use make, model, and year as column names.</summary>
@@ -59,6 +66,7 @@ Let's write a migration to track these on a new **Car** model.  But first create
 What does this give us?
 
 Migration:
+
 ```ruby
 class CreateCars < ActiveRecord::Migration
   def change
@@ -92,7 +100,7 @@ Above we said that once a migration is merged into master, it is permanent.  But
 1. preservation of production data
 1. other developers
 
-If your migration is run on any sort of staging or production environment and you don't, in ordinary practice, wipe that database, then that migration is set-in-stone.  Your top concern when writing a migration, is to not do any damage to production data.  Your users will never forgive you if you accidentally delete pictures of fluffy.
+If your migration is run on any sort of staging or production environment and you don't, in ordinary practice, wipe that database, then that migration is set-in-stone.  Your top concern when writing a migration, is to not do any damage to production data.  Your users will never forgive you if you accidentally delete pictures of their cat Fluffy.
 
 If other developers are already working with your migration (perhaps it was merged to a shared feature branch), then it is set-in-stone.  If you were to change your migration now they would have to update their branch to match and be very very certain that they did not accidentally introduce a different variation of your migration.
 
@@ -111,13 +119,13 @@ Rails has migration generators for this, using respectively "AddXXXToYYY" or "Re
 
 Example:
 
-`rails generate migration AddPartNumberToProducts`
+`rails generate migration AddVinToCars`
 
-This generates an empty migration with the name `AddPartNumberToProducts`.  After running this you can edit the new migration to properly set the "PartNumber" datatype (likely String or Integer).
+This generates an empty migration with the name `AddVinToCars`.  After running this you can edit the new migration to properly set the "color" datatype (likely String).
 
 ```ruby
 # generated empty migration
-class AddPartNumberToProducts < ActiveRecord::Migration
+class AddVinToCars < ActiveRecord::Migration
   def change
   end
 end
@@ -128,14 +136,14 @@ end
 
 Example:
 
-* add a nickname column to the User model: `rails generate migration AddNicknameToUsers nickname:string`
+* add a color column to the Car model: `rails generate migration AddVinToCars color:string`
 
 This generates a migration like:
 
 ```ruby
-class AddNicknameToUsers < ActiveRecord::Migration
+class AddVinToCars < ActiveRecord::Migration
   def change
-    add_column :users, :nickname, :string
+    add_column :cars, :vin, :string
   end
 end
 ```
@@ -328,7 +336,7 @@ This will do the same thing as `t.references`, but it has the added benefit of b
 </details>
 
 
-**Second: Ruby** we have to establish the relationship in the rails models themselves.  That means adding code like:
+**Second: Rails Models** we have to establish the relationship in the rails models themselves.  That means adding code like:
 
 ```ruby
 class Owner < ActiveRecord::Base
@@ -411,6 +419,214 @@ end
 ```
 
 Make sure you then update the models with the appropriate `has_many` and `belongs_to` relationships.  
+
+
+## Many-To-Many (N:N) with 'through'
+
+**Example:** A student `has_many` courses and a course `has_many` students. Thinking back to our SQL discussions, recall that we used a *join* table to create this kind of association.
+
+A *join* table has two different foreign keys, one for each model it is associating. In the example below, 3 students have been associated with 4 different courses:
+
+| student_id | course_id |
+| ---------- | --------- |
+| 1          | 1         |
+| 1          | 2         |
+| 1          | 3         |
+| 2          | 1         |
+| 2          | 4         |
+| 3          | 2         |
+| 3          | 3         |
+
+### Set Up
+
+To create N:N relationships in Rails, we use this pattern: `has_many :related_model, through: :join_table_name`
+
+1. In the terminal, create three models:
+
+  ```
+  rails g model Student name:string
+  rails g model Course name:string
+  rails g model Enrollment
+  ```
+
+  `Enrollment` is the model for our *join* table. When naming your join table, you can either come up with a name that makes semantic sense (like "Enrollment"), or you can combine the names of the associated models (e.g. "StudentCourse").
+
+2. Open up the models in Sublime, and edit them so they include the proper associations:
+
+  ```ruby
+  #
+  # app/models/course.rb
+  #
+  class Course < ActiveRecord::Base
+    has_many :enrollments, dependent: :destroy
+    has_many :students, through: :enrollments
+  end
+  ```
+
+  ```ruby
+  #
+  # app/models/student.rb
+  #
+  class Student < ActiveRecord::Base
+    has_many :enrollments, dependent: :destroy
+    has_many :courses, through: :enrollments
+  end
+  ```
+
+  ```ruby
+  #
+  # app/models/enrollment.rb
+  #
+  class Enrollment < ActiveRecord::Base
+    belongs_to :course
+    belongs_to :student
+  end
+  ```
+
+3. Add the foreign keys to the enrollments migration:
+
+  ```ruby
+  #
+  # db/migrate/20150804040426_create_enrollments.rb
+  #
+  class CreateEnrollments < ActiveRecord::Migration
+    def change
+      create_table :enrollments do |t|
+        t.timestamps
+
+        # define foreign keys for associated models
+        t.belongs_to :student
+        t.belongs_to :course
+      end
+    end
+  end
+  ```
+
+### Using Your Associations
+
+1. In the terminal, run `rake db:migrate` to create the new tables.
+
+2. Enter the rails console (`rails c`) to create and associate data!
+
+  ```ruby
+  # create some students
+  sally = Student.create(name: "Sally")
+  fred = Student.create(name: "Fred")
+  alice = Student.create(name: "Alice")
+
+  # create some courses
+  algebra = Course.create(name: "Algebra")
+  english = Course.create(name: "English")
+  french = Course.create(name: "French")
+  science = Course.create(name: "Science")
+
+  # associate our model instances
+  sally.courses << algebra
+  # ^ same as:
+  # sally.courses.push(algebra)
+  sally.courses << french
+
+  fred.courses << science
+  fred.courses << english
+  fred.courses << french
+
+  # here's a little trick: use an array to associate multiple courses with a student in just one line of code
+  alice.courses << [english, algebra]
+  ```
+
+  **Note:** Because we've used `through`, we can create our associations in the same way we do for a 1:N association (`<<`).
+
+3. Still in the Rails console, test your data to make sure your associations worked:
+
+  ```ruby
+  sally.courses.map(&:name)
+  # => ["Algebra", "French"]
+
+  fred.courses.map(&:name)
+  # => ["Science", "English", "French"]
+
+  alice.courses.map(&:name)
+  # => ["English", "Algebra"]
+  ```
+
+## Challenges, Part 2: Many-To-Many
+
+Head over to the [Many-To-Many Challenges](many-to-many-challenges.md) and work together in pairs.
+
+
+## Stretch Challenge: Self-Referencing Associations
+
+Lots of real-world apps create associations between items that are the same type of resource.  Read (or reread) <a href="http://guides.rubyonrails.org/association_basics.html#self-joins" target="_blank">the "self joins" section of the Associations Basics Rails Guide</a>, and try to create a self-referencing association in your `practice_associations` app. (Classic use cases are friends and following, where both related resources would be users.)
+
+## Migration Workflow
+
+Getting your models and tables synced up is a bit tricky. Pay close attention to the following workflow, especially the rake tasks.
+
+```
+# create a new rails app
+rails new my_app -d postgresql
+cd my_app
+
+# create the database
+rake db:create
+
+# REPEAT THESE TASKS FOR EVERY CHANGE TO YOUR DATABASE
+# <<< BEGIN WORKFLOW LOOP >>>
+
+# -- IF YOU NEED A NEW MODEL --
+# auto-generate a new model (AND automatically creates a new migration)
+rails g model Pet name:string
+rails g model Owner name:string
+
+# --- OTHERWISE ---
+
+# if you only need to change fields in an *existing* model,
+# you can just generate a new migration
+rails g migration AddAgeToOwner age:integer
+
+# never try to create a migration file yourself through the file system! it's really hard to get the name right!
+
+# -- EITHER WAY --
+### whether we're creating a new model or updating an existing one, we can manually edit our models and migrations in sublime
+# update associations in model --> this affects model interface
+# update foreign keys in migrations --> this affects database tables
+
+# generate schema for database tables
+rake db:migrate
+
+# <<< END LOOP >>>
+
+# finally, we need some data to play with
+# for now, we'll seed it manually, from the rails console...
+rails c
+> Pet.create(name: "Wowzer")
+> Pet.create(name: "Rufus")
+
+# but later we will run a seed task
+rake db:seed
+```
+
+## Helpful Hints
+
+When you're **creating associations** in Rails ActiveRecord (or most any ORM, for that matter):
+
+  * Define the relationships in your models (the blueprint for your objects)
+    * Don't forget to define all sides of the relationship (e.g. `has_many` and `belongs_to`)
+  * Remember to put the foreign key for a relationship in your migration
+    * If you're not sure which side of the relationship has the foreign key, just use this simple rule: the model with `belongs_to` must include a foreign key.
+
+## Less Common Associations
+
+These are for your references and are not used nearly as often as `has_many` and `has_many through`.
+
+  * <a href="http://guides.rubyonrails.org/association_basics.html#the-has-one-association" target="_blank">has_one</a>
+  * <a href="http://guides.rubyonrails.org/association_basics.html#the-has-one-through-association" target="_blank">has_one through</a>
+  * <a href="http://guides.rubyonrails.org/association_basics.html#has-and-belongs-to-many-association-reference" target="_blank">has_and_belongs_to_many</a>
+
+## Useful Docs
+
+* <a href="http://guides.rubyonrails.org/association_basics.html" target="_blank">Associations Rails Guide</a>
+* <a href="http://edgeguides.rubyonrails.org/active_record_migrations.html" target="_blank">Migrations Rails Guide</a>
 
 
 [1]: https://en.wikipedia.org/wiki/Schema_migration
