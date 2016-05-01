@@ -51,7 +51,7 @@ Let's say we're building a website to sell used cars.  We know we need a few bas
 * model
 * year
 
-Let's write a migration to track these on a new **Car** model.  But first create a new rails app; from the directory you do your wdi work in: 
+Let's write a migration to track these on a new **Car** model.  But first create a new rails app; from the directory you do your wdi work in:
 
 ```
 $ rails new practice -T -d=postgresql
@@ -460,7 +460,26 @@ To create N:N relationships in Rails, we use this pattern: `has_many :related_mo
 
   `Enrollment` is the model for our *join* table. When naming your join table, you can either come up with a name that makes semantic sense (like "Enrollment"), or you can combine the names of the associated models (e.g. "StudentCourse").
 
-2. Open up the models in your text-editor, and edit them so they include the proper associations:
+2. Add the foreign keys to the enrollments migration:
+
+  ```ruby
+  #
+  # db/migrate/20150804040426_create_enrollments.rb
+  #
+  class CreateEnrollments < ActiveRecord::Migration
+    def change
+      create_table :enrollments do |t|
+        t.timestamps
+
+        # define foreign keys for associated models
+        t.belongs_to :student
+        t.belongs_to :course
+      end
+    end
+  end
+  ```
+
+  2. Open up the models in your text-editor, and edit them so they include the proper associations:
 
   ```ruby
   #
@@ -492,24 +511,7 @@ To create N:N relationships in Rails, we use this pattern: `has_many :related_mo
   end
   ```
 
-3. Add the foreign keys to the enrollments migration:
 
-  ```ruby
-  #
-  # db/migrate/20150804040426_create_enrollments.rb
-  #
-  class CreateEnrollments < ActiveRecord::Migration
-    def change
-      create_table :enrollments do |t|
-        t.timestamps
-
-        # define foreign keys for associated models
-        t.belongs_to :student
-        t.belongs_to :course
-      end
-    end
-  end
-  ```
 
 ### Using Your Associations
 
