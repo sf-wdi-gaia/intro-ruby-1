@@ -53,6 +53,7 @@ Don't copy/paste the tutorial, this is the most important part and to avoid copy
 
 ## Docs & Resources
 
+* <a href="https://github.com/SF-WDI-LABS/shared_modules/tree/master/04-ruby-rails/cookies-and-sessions/28">Cookies & Sessions</a>
 * <a href="http://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html#method-i-has_secure_password" target="_blank">`has_secure_password`</a>
 * <a href="https://www.railstutorial.org/book/modeling_users" target="_blank">Rails Tutorial on Modeling Users</a>
 * <a href="http://railscasts.com/episodes/250-authentication-from-scratch" target="_blank">Kinda Old Railscast</a>
