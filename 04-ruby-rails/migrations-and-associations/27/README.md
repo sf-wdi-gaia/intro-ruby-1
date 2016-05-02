@@ -5,11 +5,11 @@ In this lesson we'll talk about changing the structure of the tables in the data
 
 ## Objectives
 
-1. Be able to add/remove columns from the database.
-1. Be able to explain when it is OK to edit a migration.
-1. Understand the basics of how to alter an existing column.
-1. Be able to create 1:n rails model relationships.
-1. Be able to create n:n rails model relationships with through.
+* Be able to add/remove columns from the database.
+* Be able to explain when it is OK to edit a migration.
+* Understand the basics of how to alter an existing column.
+* Be able to create 1:n rails model relationships.
+* Be able to create n:n rails model relationships with through.
 
 
 
