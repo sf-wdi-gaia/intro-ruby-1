@@ -1,7 +1,7 @@
 
 ###An introduction to SQL  
 ###-or-  
-###In which we suffer through databases to appreciate Active Records  
+###In which we truly learn to appreciate Active Records  
 <hr>
 
 ##What is a Relational Database (RDB)?
@@ -322,3 +322,7 @@ ORDER BY lowest_avaialable_price;
 See our GA notes on [joins](joins.md).
 
 If you're prepping for an interview where you may need to know SQL, consider [Khan Academy's SQL Lessons](https://www.khanacademy.org/computing/computer-programming/sql/sql-basics/v/welcome-to-sql)
+
+[`psql` cheatsheet](http://www.postgresonline.com/downloads/special_feature/postgresql83_psql_cheatsheet.pdf)
+
+
