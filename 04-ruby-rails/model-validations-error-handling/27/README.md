@@ -3,7 +3,7 @@
 | Objectives |
 |:--- |
 | Discuss the importance of error-handling in web development. |
-| Use built-in ActiveRecord to validate database entries. |
+| Use built-in ActiveRecord validation methods to validate database entries. |
 | Display errors in the view using Rails `flash` messages. |
 
 ## Error-Handling: Why does it matter?
