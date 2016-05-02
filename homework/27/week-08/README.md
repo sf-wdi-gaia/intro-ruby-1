@@ -9,7 +9,7 @@
   * When should I edit schema.rb?
   * When is it OK to edit a migration file?
   * If `Squid has_many :arms` and an `Arm belongs_to :squid` then which table has a foreign_key? (the arm_id or squid_id column)
-2. **Complete** the [homework portion of the Pet Lab](https://github.com/sf-wdi-27-28/rails_validations_errors/blob/master/homework.md) and **submit a pull request** of your work.
+2. **Complete** the [homework portion of the Pet Lab](https://github.com/sf-wdi-27-28/rails_validations_errors/blob/master/homework.md) and **submit a pull request** of your work. Make sure to work on the base challenges first and reach for the stretches if you have time.
 3. **Complete** the  [many-to-many challenges](https://github.com/SF-WDI-LABS/shared_modules/blob/master/04-ruby-rails/migrations-and-associations/27/many_to_many_challenges.md) from the migrations and associations lesson this morning.
 
 Please use any remaining time to review exercises/drills from the day.
