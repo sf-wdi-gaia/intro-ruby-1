@@ -10,7 +10,7 @@ Please refer to the [Instructions for Submitting Homework](/how-to/homework-subm
 
 1. In preparation for tomorrow, please familiarze yourself with the following:
     * First, make sure you're comfortable with how to represent [1:1, 1:N, &amp; N:N Relationships](http://www.databaseprimer.com/pages/table-relationships/) in databse tables.
-      * What would your table relationships look like for: `Zoos, Animals, Caretakers`, and `PropertyManagers, Properties, Tenants` (we will go over this in class!)
+      * What would your table relationships look like for: `drivers, vehicles, &amp; drivers licenses`, and `zoos, animals, &amp; caretakers` (we will go over this in class!)
     * Then, read all about Active Record:
       * Setting up databse tables with [Migrations](http://edgeguides.rubyonrails.org/active_record_migrations.html) - All of it!
       * Setting up model relationships with [Associations](http://guides.rubyonrails.org/association_basics.html) - Only sections [1](http://guides.rubyonrails.org/active_record_migrations.html#migration-overview) and [2.0-2.4](http://guides.rubyonrails.org/association_basics.html#the-types-of-associations)!
