@@ -1,5 +1,4 @@
-# Rails Fundamentals
-## JOINS
+# SQL Joins
 
 | Objectives |
 |:---|
