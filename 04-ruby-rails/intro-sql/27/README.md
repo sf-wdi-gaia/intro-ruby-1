@@ -1,5 +1,5 @@
 
-###An introduction to SQL  
+# An introduction to SQL  
 ###-or-  
 ###In which we truly learn to appreciate Active Records  
 <hr>
@@ -325,4 +325,4 @@ If you're prepping for an interview where you may need to know SQL, consider [Kh
 
 [`psql` cheatsheet](http://www.postgresonline.com/downloads/special_feature/postgresql83_psql_cheatsheet.pdf)
 
-
+[SQL cheatsheet for PostgreSQL](assets/postgresql-cheat-sheet.pdf)
