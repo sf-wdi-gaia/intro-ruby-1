@@ -270,8 +270,11 @@ See http://stackoverflow.com/questions/17918117/rails-4-datatypes
 
 *****
 
+*****
 
-## ActiveRecord Associations
+*****
+
+# ActiveRecord Associations
 
 Objectives
 
