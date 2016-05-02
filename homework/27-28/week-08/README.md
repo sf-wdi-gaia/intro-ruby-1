@@ -6,19 +6,14 @@ If you have any remaining time, please complete/review the exercises from dawn a
 
 Please refer to the [Instructions for Submitting Homework](/how-to/homework-submission.md).
 
-<!--
 ## Day 1
 
-1. Reading
-    * [Example](#example)
-2. Bonus/Stretch
-    * [Example](#example)
-
-Please use any remaining time to complete and review the exercises from dawn & dusk:
-
-* [Example](#example)
-* [Example](#example)
--->
+1. In preparation for tomorrow, please read the following ActiveRecord Rails Guides:
+    * First, make sure you're comfortable with how to represent [1:1, 1:N, &amp; N:N Relationships](http://www.databaseprimer.com/pages/table-relationships/) in databse tables.
+    * Then, read all about Active Record:
+      * Setting up databse tables with [Migrations](http://edgeguides.rubyonrails.org/active_record_migrations.html) - All of it!
+      * Setting up model relationships with [Associations](http://guides.rubyonrails.org/association_basics.html) - Only sections [1](http://guides.rubyonrails.org/active_record_migrations.html#migration-overview) and [2.0-2.4](http://guides.rubyonrails.org/association_basics.html#the-types-of-associations)!
+2. If you have any remaining time, try adding Auth to an existing Rails App (like the Bog App, or Rock-n-Rails).
 
 <!-- 
 ## Day 2
