@@ -1,8 +1,8 @@
 
 # An introduction to SQL  
-###-or-  
-###In which we truly learn to appreciate Active Records  
-<hr>
+ 
+###In which we truly learn to appreciate ActiveRecord
+
 
 ##What is a Relational Database (RDB)?
 
