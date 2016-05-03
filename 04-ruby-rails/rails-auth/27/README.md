@@ -4,8 +4,8 @@
 
 **Auth** entails two _authy_ components:
 
-1. Authentication - identifying a user.
-2. Authorization - determining whether a user is permitted to perform an action.
+1. **Authentication** - identifying a user.
+2. **Authorization** - determining whether a user is permitted to perform an action.
 
 
 Because HTTP is designed to be stateless, and we don't want to require users to submit login details for every operation we'll use **session** information in Rails to maintain the state of "who" the user is.
@@ -77,12 +77,29 @@ session[:user_id] = user.id
 
 You'll want to do this at **signup** and **login**.
 
-## Summary
+## Helpers
 
-That's it, in a nutshell.  Not too bad right?  
+In your `application_controller.rb` you'll want to add a `current_user` method so that each controller doesn't need to implement a way to check users for **authorization**.
+
+```rb
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+  helper_method :current_user
+```
+## Conclusion
+
+That's it, **authentication** in a nutshell.  Not too bad right?  
 
 
 <img src="http://i.giphy.com/TEFplLVRDMWBi.gif" style="max-width=400px;">
+
+---
+
+You're not quite done yet though.  You have **authentication** but you'll still want to:
+
+* Add **authorization** -  go to each of your controllers and check whether the current_user should be allowed to do the action they're trying to.
+* Consider adding conditionals to your views - don't show links to users that can't use them.
 
 
 ## Resources
