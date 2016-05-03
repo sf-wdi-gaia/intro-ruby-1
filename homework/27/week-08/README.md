@@ -22,7 +22,7 @@ Please use any remaining time to review exercises/drills from the day.
  * [Association Basics](http://guides.rubyonrails.org/association_basics.html) guide, sections 1 and 2. Pay particular attention to reviewing `has_many`, `belongs_to` and `has_many` `through`. The rest of section 2 covers other associations you will see in real-world Rails apps. [Self joins](http://guides.rubyonrails.org/association_basics.html#self-joins), for example, create associations between two instances of the same model - like two users being friends).  #friends
  * Start reading the [Active Record Migrations](http://guides.rubyonrails.org/active_record_migrations.html) guide. You'll finish this tomorrow night.
  
-2. Finish Library app at least once - **part 1 only** (we'll do part 2 during the day tomorrow). Submit a pull request. 
+2. Finish [Library app](https://github.com/sf-wdi-27-28/public_library_app) at least once - **part 1 only** (we'll do part 2 during the day tomorrow). **Submit a pull request** of your favorite branch.
 
 Please use any remaining time to review exercises/drills from the day.
  
