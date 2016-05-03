@@ -89,9 +89,14 @@ Say we have an `airplanes#create` controller method that currently looks like th
 class AirplanesController < ApplicationController
 
   def create
-    airplane_params = params.require(:airplane).permit(:name, :description)
     airplane = Airplane.create(airplane_params)
     redirect_to airplane_path(airplane)
+  end
+  
+  private 
+  
+  def airplane_params
+    params.require(:airplane).permit(:name, :description)
   end
 
 end
@@ -111,7 +116,6 @@ We should refactor `airplanes#create` to use `.new` and `.save` instead, so we c
 class AirplanesController < ApplicationController
 
   def create
-    airplane_params = params.require(:airplane).permit(:name, :description)
     airplane = airplane.new(airplane_params)
     if airplane.save
       redirect_to airplane_path(airplane)
@@ -119,7 +123,13 @@ class AirplanesController < ApplicationController
       redirect_to new_airplane_path
     end  
   end
-
+  
+  private 
+  
+  def airplane_params
+    params.require(:airplane).permit(:name, :description)
+  end
+  
 end
 ```
 
@@ -141,7 +151,6 @@ We can implement `flash[:error]` in our `airplanes#create` controller method lik
 class AirplanesController < ApplicationController
 
   def create
-    airplane_params = params.require(:airplane).permit(:name, :description)
     airplane = airplane.new(airplane_params)
     if airplane.save
       redirect_to airplane_path(airplane)
@@ -150,6 +159,12 @@ class AirplanesController < ApplicationController
       flash[:error] = airplane.errors.full_messages.join(", ")
       redirect_to new_airplane_path
     end  
+  end
+  
+  private 
+  
+  def airplane_params
+    params.require(:airplane).permit(:name, :description)
   end
 
 end
