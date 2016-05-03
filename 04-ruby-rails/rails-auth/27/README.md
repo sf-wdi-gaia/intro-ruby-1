@@ -18,7 +18,7 @@ As a quick and simple way to setup auth in Rails we're going to follow this **[g
 
 ___
 
-Let's see what we need:
+Below is a _summary_ of what we will use:
 
 ## Routes
 
