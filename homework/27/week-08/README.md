@@ -22,9 +22,16 @@ Please use any remaining time to review exercises/drills from the day.
  * [Association Basics](http://guides.rubyonrails.org/association_basics.html) guide, sections 1 and 2. Pay particular attention to reviewing `has_many`, `belongs_to` and `has_many` `through`. The rest of section 2 covers other associations you will see in real-world Rails apps. [Self joins](http://guides.rubyonrails.org/association_basics.html#self-joins), for example, create associations between two instances of the same model - like two users being friends).  #friends
  * Start reading the [Active Record Migrations](http://guides.rubyonrails.org/active_record_migrations.html) guide. You'll finish this tomorrow night.
  
-2. Finish Library app - **part 1 only** (we'll do part 2 during the day tomorrow). Submit a pull request. 
+2. Finish Library app at least once - **part 1 only** (we'll do part 2 during the day tomorrow). Submit a pull request. 
 
 Please use any remaining time to review exercises/drills from the day.
+ 
+ >If you're interested in more on sessions and cookies in Rails, you can check out this [helpful blog post](http://www.justinweiss.com/articles/how-rails-sessions-work/), Rails [`Cookies` class docs](http://api.rubyonrails.org/classes/ActionDispatch/Cookies.html), or Rails guides info on [sessions](http://guides.rubyonrails.org/action_controller_overview.html#session) (and the [flash](http://guides.rubyonrails.org/action_controller_overview.html#the-flash) hash).
+ 
+ >For more on Rails authentication, take a look at the [`bcrypt-ruby` gem docs](https://github.com/codahale/bcrypt-ruby) and the [`has_secure_password` documentation](http://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html#method-i-has_secure_password_source)  (you can click "Show" near the bottom of the page to see source code).
+ 
+> For more on encryption, the `bcrypt-ruby` gem docs have a great section on [how bcrypt works](https://github.com/codahale/bcrypt-ruby#how-bcrypt-works) with general information, and/or see the extensive [intro ](https://en.wikipedia.org/wiki/Public-key_cryptography) to Wikipedia's article on Public Key Cryptography. 
+ 
 
 
 
