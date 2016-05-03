@@ -6,7 +6,7 @@
 | Discuss and use an HTTP Cookie in a web application |
 | Differentiate between an HTTP Cookie and a Session |
 
-Today's lab can be found here: **[Cookie Monster App](https://github.com/sf-wdi-25/cookie_monster_app)**
+Today's lab can be found here: **[Cookie Monster App](https://github.com/sf-wdi-27-28/cookie_monster_app)**
 
 # Cookies
 ## What's a cookie?
@@ -44,7 +44,13 @@ Connection: keep-alive
 <html></html>
 ```
 
-The Cookie is then saved to the browser for localhost:3000. You can view it in the Chrome Developer Console under the "resources" tab. [Try this](https://developers.google.com/web/tools/iterate/manage-data/cookies?hl=en).
+The Cookie is then saved to the browser for localhost:3000. You can view it in the Chrome Developer Console under the "resources" tab.
+
+Here's a look at the cookie from a google page:
+
+![dev tools](https://developers.google.com/web/tools/chrome-devtools/iterate/manage-data/imgs/cookies.png)
+
+[For more detail, check out the Google Developers page on cookies and the dev tools](https://developers.google.com/web/tools/iterate/manage-data/cookies?hl=en).
 
 Once the cookie is set in the browser, any subsequent request to the website automatically has the following line in the HTTP Request Header:
 
@@ -125,7 +131,7 @@ end
 ```
 
 #### Exercises
-Today's lab can be found here: **[Cookie Monster App](https://github.com/sf-wdi-25/cookie_monster_app)**
+Today's lab can be found here: **[Cookie Monster App](https://github.com/sf-wdi-27-28/cookie_monster_app)**
 
 #### Resources
 * [Rails Guides: Securing Sessions](http://guides.rubyonrails.org/security.html)
