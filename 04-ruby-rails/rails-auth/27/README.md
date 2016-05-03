@@ -92,7 +92,7 @@ In your `application_controller.rb` you'll want to add a `current_user` method s
 That's it, **authentication** in a nutshell.  Not too bad right?  
 
 
-<img src="http://i.giphy.com/TEFplLVRDMWBi.gif" style="max-width=400px;">
+<img src="http://i.giphy.com/TEFplLVRDMWBi.gif" style="max-width: 400px;">
 
 ---
 
