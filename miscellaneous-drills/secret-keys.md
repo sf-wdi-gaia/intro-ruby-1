@@ -39,4 +39,4 @@ To counter rainbow tables, websites began using a technique called **salting** w
 
 ###Other Resources
 
-One of the most commonly used encryption algorithms is bcrypt. See the [`bcrypt-ruby`] gem's [explanation for how  bcrypt works](https://github.com/codahale/bcrypt-ruby#how-bcrypt-works). (There's also a [`bcrypt` node module](https://www.npmjs.com/package/bcrypt).)
+One of the most commonly used encryption algorithms is bcrypt. See the `bcrypt-ruby` gem's [explanation for how  bcrypt works](https://github.com/codahale/bcrypt-ruby#how-bcrypt-works). (There's also a [`bcrypt` node module](https://www.npmjs.com/package/bcrypt).)
