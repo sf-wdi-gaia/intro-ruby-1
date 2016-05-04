@@ -13,7 +13,7 @@ Let's begin
 
 ### Create an app with some migrations
 
-1. Create a new rails app. You got this one.
+1. Create a new rails app. Make sure to use postgres. You got this one.
 
 1. Add some models
   ```console
