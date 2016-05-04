@@ -44,14 +44,16 @@ Let's begin
   ```
 1. Test out these associations in the rails console.
 
-1. Oops! I forgot that I wanted an `author` attribute on the `recipe` model. Do this now keeping in mind the #1 rule of migration hell.
+### Exercises
 
-1. Now that I'm thinking about it, I actually don't want that `author` attribute... Sorry. Can you delete it?
+1. Oops! I forgot that I wanted an `author` attribute on the `recipe` model. *Add this attribute* now keeping in mind the #1 rule of migration hell.
 
-1. This is really weird. I really didn't think this was going to happen, but I was thinking... shouldn't `author` actually be called `contributor`? Yeah. That makes more sense to me.
+1. Now that I'm thinking about it, I actually don't want that `author` attribute... Sorry. Can you *delete this attribute*?
 
-1. I just realized that I accidentally made the `posted` attribute on recipes a string! This should be a datetime, der. Can you help me out?
+1. This is really weird. I really didn't think this was going to happen, but I was thinking... shouldn't `author` actually be called `contributor`? Yeah. That makes more sense to me. *Modify this attribute*.
 
-1. I want a new table. Let's call it `comments` and make it a 1:n relationship with `recipes`. K thanks.
+1. I just realized that I accidentally made the `posted` attribute on recipes a string! This should be a datetime, der. Can you help me out to *change this datatype*?
 
-1. Blerg I HATE comments. Comments are sooo 2015. Drop that table.
+1. I want a *new table*. Let's call it `comments` and make it a 1:n relationship with `recipes`. K thanks.
+
+1. Blerg I HATE comments. Comments are sooo 2015. *Drop that table*.
