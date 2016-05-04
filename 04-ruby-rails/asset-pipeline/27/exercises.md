@@ -19,6 +19,8 @@ Start with the [asset pipeline poem lab](https://github.com/sf-wdi-27-28/asset_p
 ####SASS
 
  1. The `scss` at the end of Rails style files means 'sass-enabled cascading style sheets' and it gives your css [superpowers](http://sass-lang.com/). Try making your own use of some sassy superpowers:
+ 
+   > You may have to change the extension of your files to `.scss`.
 
    * Nested Selectors
      ```scss
