@@ -40,7 +40,8 @@ Please use any remaining time to review exercises/drills from the day.
 
 1. Reading
  * **Finish reading** the [Active Record Migrations](http://guides.rubyonrails.org/active_record_migrations.html) guide.
- * **Read** [*A Successful Branching Model*](http://nvie.com/posts/a-successful-git-branching-model/) article. The sections titled "Decentralized but centralized," "The main branches," and "Summary" are the most important portions of this reading. If time is tight, read only those sections.
+ * In [*A Successful Branching Model*](http://nvie.com/posts/a-successful-git-branching-model/), read the sections titled "Decentralized but centralized," "The main branches," and "Summary".
+ * **Read** the additional [asset pipeline reading](https://github.com/SF-WDI-LABS/shared_modules/blob/master/04-ruby-rails/asset-pipeline/27/additional-reading.md#erb-and-asset-path-helpers).
  * **Learn** how to [add a collaborator to a personal repository](https://help.github.com/articles/adding-collaborators-to-a-personal-repository/)
 
 2. **Complete** the [asset pipeline poem lab](https://github.com/sf-wdi-27-28/asset_pipeline_poem) (not including the bonus). **Add the ["Take it further!"](https://github.com/SF-WDI-LABS/shared_modules/blob/master/04-ruby-rails/asset-pipeline/27/exercises.md)** exercises to your lab. **Submit a pull request**.
