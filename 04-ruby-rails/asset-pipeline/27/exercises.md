@@ -1,10 +1,14 @@
 # Rails Asset Pipeline Exercises
 
-## Adding CSS & JS Files
+### Adding CSS & JS Files
 
-1. Add a scripts file called `scripts.js` to the `app/assets/javascripts` folder of a rails project. Add just ```console.log('I live to serve')```. Does it work in your app? Do you have to restart your server?
+1. Add a scripts file called `scripts.js` to the `app/assets/javascripts` folder of a rails project. Add just a sanity check `console.log` to the file. Does the log message show up in your app? Why? What if you refresh the page or restart your server?
 
-1. Add a style sheet called `styles.css.scss` to your `app/assets/stylesheets` folder. Are the styles available in the client? The `scss` means 'sass-enabled cascading style sheets' and it gives your css [superpowers](http://sass-lang.com/). Try making your own use of these some sassy superpowers:
+1. Add a style sheet called `styles.css.scss` to your `app/assets/stylesheets` folder. Are the styles available in the client? Why?
+
+### Stretch: SASS
+
+1. The `scss` means 'sass-enabled cascading style sheets' and it gives your css [superpowers](http://sass-lang.com/). Try making your own use of these some sassy superpowers:
 
   * Nested Selectors
     ```scss
@@ -79,7 +83,7 @@
 
 ## Adding Bootstrap
 
-Here are three ways to add bootstrap to a project.
+Here are four ways to add bootstrap to a project.
 
 0. Download files
 1. Use a CDN
@@ -91,7 +95,7 @@ Here are three ways to add bootstrap to a project.
 1. Go to [Bootstrap Getting Started](http://getbootstrap.com/getting-started/) and download their files.
 2. Add these files to the `vendor/assets` folder. This will automatically pull them into your asset pipeline and make them available on the client.
 
-### Use a CDN
+#### Use a CDN
 
 1. Go to [Bootstrap](http://getbootstrap.com/) and grab the links to their CDN.
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -99,14 +103,14 @@ Here are three ways to add bootstrap to a project.
 2. Add these links to your `application.html.erb` file
 3. Now the CDN will load these files into your client. And away you go!
 
-### Use a Gem
+#### Use a Gem
 
 1. Find the best gem for the job by searching 'bootstrap' at [Ruby Toolbox](https://www.ruby-toolbox.com/)
 2. Which gem did you find that was the best?
 3. For this tutorial we'll use the trending `bootstrap-sass` gem. [Github Repo](https://github.com/twbs/bootstrap-sass)
 4. Follow the [Installation Instructions](https://github.com/twbs/bootstrap-sass#installation) to install and add the bootstrap files from inside the gem into your asset pipeline.
 
-### Use Bower
+#### Use Bower
 
 [Bower](http://bower.io/) is a **front end package manager** made by Twitter - think what npm was for node packages, or what bundler is for gems, bower is for front end javascript and css libraries. Let's use Bower to add bootstrap to our project.
 
