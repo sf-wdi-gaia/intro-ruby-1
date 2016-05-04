@@ -40,9 +40,10 @@ Please use any remaining time to review exercises/drills from the day.
 
 1. Reading
  * **Finish reading** the [Active Record Migrations](http://guides.rubyonrails.org/active_record_migrations.html) guide.
- * **Read** [*A Successful Branching Model*](http://nvie.com/posts/a-successful-git-branching-model/) article. The sections titled "Decentralized but centralized," "The main branches," and "Summary" are the most important portions of this reading.
+ * **Read** [*A Successful Branching Model*](http://nvie.com/posts/a-successful-git-branching-model/) article. The sections titled "Decentralized but centralized," "The main branches," and "Summary" are the most important portions of this reading. If time is tight, read only those sections.
  * **Learn** how to [add a collaborator to a personal repository](https://help.github.com/articles/adding-collaborators-to-a-personal-repository/)
-1. **Finish** the [asset pipeline poem lab](https://github.com/sf-wdi-27-28/asset_pipeline_poem) and **submit a pull request**.
+
+2. **Complete** the [asset pipeline poem lab](https://github.com/sf-wdi-27-28/asset_pipeline_poem) (not including the bonus). **Add the ["Take it further!"](https://github.com/SF-WDI-LABS/shared_modules/blob/master/04-ruby-rails/asset-pipeline/27/exercises.md)** exercises to your lab. **Submit a pull request**.
 2. In the [Learn git branching tutorial](http://pcottle.github.io/learnGitBranching/), **complete** lessons 1-3 on the Introduction Sequence (stop when you get to Rebase Introduction), lesson 1 on the Ramping Up sequence, and levels 1-6 on the remote tab's Push & Pull sequence (stop when you get to Diverged History).
 
 Please use any remaining time to review exercises/drills from the day.
