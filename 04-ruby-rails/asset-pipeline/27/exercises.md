@@ -2,7 +2,11 @@
 
 ### Asset Pipeline Poem
 
-Start with the [asset pipeline poem lab](https://github.com/sf-wdi-27-28/asset_pipeline_poem).  Add on the stretch challenges below when you are finished with the poem.
+Start with the [asset pipeline poem lab](https://github.com/sf-wdi-27-28/asset_pipeline_poem).  Move on to the challenges below when you have these steps complete:
+
+1. Put the lines of the file and title in the correct order.  
+2. Show the character count (see screenshot in lab readme).  
+3. Precompile so that all of your JavaScript and CSS assets are combined into one file each.
 
 ### Take it Further!
 
