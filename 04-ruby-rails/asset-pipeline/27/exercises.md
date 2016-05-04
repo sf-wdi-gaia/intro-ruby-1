@@ -1,22 +1,29 @@
 # Rails Asset Pipeline Exercises
 
-## Asset Pipeline Poem
+### Asset Pipeline Poem
 
 Start with the [asset pipeline poem lab](https://github.com/sf-wdi-27-28/asset_pipeline_poem).  Add on the stretch challenges below when you are finished with the poem.
 
-## Stretch Challenges
+### Take it Further!
 
 #### Displaying Images
 
- 1. Add an image of your choice to your `app/assets/images` folder
- 2. Add that image to your view by calling the file name in an `image_tag` erb view helper.
+ 1. Add two images of your choice to your `app/assets/images` folder
+ 2. Add one image to your main site index view by calling the file name in an `image_tag` erb view helper.
+ 
+  ```
+    <%= image_tag 'rails.png' %>
+  ```
+ 
+ 1. Check out [other asset tag helpers](http://api.rubyonrails.org/classes/ActionView/Helpers/AssetTagHelper.html), and add one more of any kind (could be another image) to your asset pipeline poem.
 
- ```
-   <%= image_tag 'rails.png' %>
- ```
+#### Using `asset_path`
 
+1. Use jQuery to add a click event handler to the title of the poem.  Start by logging a sanity check message in your console. Test this.
 
-####SASS
+1. Update the click event handler to change the image displayed on your index page.  Use the `asset_path` helper to access the correct path for the asset from inside your JavaScript code (see [this reference in the additional reading](https://github.com/SF-WDI-LABS/shared_modules/blob/master/04-ruby-rails/asset-pipeline/27/additional-reading.md#erb-and-asset-path-helpers)).
+
+### Stretch Challenge: SASS
 
  1. The `scss` at the end of Rails style files means 'sass-enabled cascading style sheets' and it gives your css [superpowers](http://sass-lang.com/). Try making your own use of some sassy superpowers:
  
