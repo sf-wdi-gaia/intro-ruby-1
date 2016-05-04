@@ -23,30 +23,55 @@ Quickly review the basics of git:
 1. A git repository with two commits on `master` before a user branches to create a `new-feature` branch. `new-feature` has 5 commits of its own.
 2. Same as above, but imagine `master` has 3 of its own commits after `new-feature` branches off.
 1. Imagine that the previous illustration is the state of the repository on GitHub and that you are invited as a collaborator. You clone the repository and make 3 more commits to `new-feature`. Draw this *whole* situation, including the contrast between local and remote repositories.
-1. Now imagine that a teammate had simultaneously done *the same thing* but had made 5 commits on `new-feature` and then had pushed those changes to GitHub. Draw the state of your local, the GitHub repo, and your teammate's local repository. Using color to specify the
+1. Now imagine that a teammate had simultaneously done *the same thing* but had made 5 commits on `new-feature` and then had pushed those changes to GitHub. Draw the state of your local, the GitHub repo, and your teammate's local repository.
 
 ## Git command challenge:
 1. Give a series of git commands that could have produced a repository that looks like each of these ones:
 
   ![image](https://cloud.githubusercontent.com/assets/6520345/15020274/2d32158e-11d6-11e6-8981-79cfc2bc6682.png)
 
+  <!-- `git init`
+
+    `git commit` x 2
+
+    `git branch style-fix`
+
+    `git checkout style-fix`
+
+    `git commit` x 3
+
+    `git checkout master`
+
+    `git commit` x 2 -->
+
   ![image](https://cloud.githubusercontent.com/assets/6520345/15020605/8f8e77e4-11d7-11e6-913e-fb9dcb7d34cd.png)
 
   [Source](https://www.atlassian.com/git/tutorials/using-branches/git-branch)
 
-<!-- 2. `git init`
+  <!-- `git init`
 
-  `git commit` x 2
+    `git commit`
 
-  `git branch new-feature`
+    `git branch little-feature`
 
-  `git checkout new-feature`
+    `git checkout little-feature`
 
-  `git commit` x 2
+    `git commit`
 
-  `git checkout -b fixes`
+    `git checkout master`
 
-  `git commit` x 2 -->
+    `git commit` x 2
+
+    `git branch big-feature`
+
+    `git checkout big-feature`
+
+    `git commit` x 3
+
+    `git checkout master`
+
+    `git commit`
+     -->
 
 
 ## Git branching tutorial
@@ -60,7 +85,7 @@ Whenever you see/type `git commit`, it may help to assume changes have been made
 
 ## Development patterns
 
-In Git, branches are a part of your everyday development process. When you want to add a new feature or fix a bug—no matter how big or how small—you spawn a new branch to encapsulate your changes. This makes sure that unstable code is never committed to the main code base, and it gives you the chance to clean up your feature’s history before merging it into the main branch 2.
+In Git, branches are a part of your everyday development process. When you want to add a new feature or fix a bug—no matter how big or how small—you spawn a new branch to encapsulate your changes. This makes sure that unstable code is never committed to the main code base, and it gives you the chance to clean up your feature’s history before merging it into the main branch.
 
 Branches are incredibly lightweight "movable pointers" that help us as developers make experimental changes! A branch in git is just a label or pointer to a particular commit in a repository, along with all of it's history (parent commits).
 
