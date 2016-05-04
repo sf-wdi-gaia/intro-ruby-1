@@ -50,7 +50,7 @@ Let's begin
 
 1. Now that I'm thinking about it, I actually don't want that `author` attribute... Sorry. Can you **delete this attribute**?
 
-1. This is really weird. I really didn't think this was going to happen, but I was thinking... shouldn't `author` actually be called `contributor`? Yeah. That makes more sense to me. **Modify this attribute**.
+1. This is really weird. I really didn't think this was going to happen, but I was thinking... shouldn't `author` actually be called `contributor`? Yeah. That makes more sense to me. Add the `author` attribute again and then **modify this attribute**.
 
 1. I just realized that I accidentally made the `posted` attribute on recipes a string! This should be a datetime, der. Can you help me out to **change this datatype**?
 
