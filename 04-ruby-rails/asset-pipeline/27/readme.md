@@ -32,13 +32,12 @@
 <body>
   <script type="text/javascript" src="vendor/jquery-1.11.3.min.js"></script>
   <script type="text/javascript" src="vendor/handlebars-v4.0.5.js"></script>
-  <script type="text/javascript" src="vendor/bootstrap.min.js"></script>
   <script type="text/javascript" src="application.js"></script>
 </body>
 </html>
 ```
 
-That's four different requests to the server, for four different JavaScript files. Ouch! There's got to be a better way!
+That's three different requests to the server, for three different files. And that's just for JavaScript! Ouch! There's got to be a better way!
 
 How Rails requires files (using the asset pipeline):
 
@@ -50,8 +49,6 @@ How Rails requires files (using the asset pipeline):
   <%= csrf_meta_tags %>
   <!-- application stylesheet -->
   <%= stylesheet_link_tag :application, media: :all %>
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <title>Rails Asset Pipeline!</title>
 </head>
 <body>
@@ -84,9 +81,13 @@ It will look for the name of the file (e.g. `jquery`) in the following directori
 
 ### Precompiling Assets
 
-So far we've been working on our applications in *development*. You may have noticed that when you create a Rails application it has three databases, `development`, `test`, and `production`. You may have also noticed the Gemfile allows `development`, `test`, and `production` as "groups" your gems can belong to.
+#### Rails Environments
 
-The asset pipeline is designed for *production* applications. That's when we care about *speed*!
+You may have noticed that when you create a Rails application it has three databases, `development`, `test`, and `production`. You may have also noticed the Gemfile allows `development`, `test`, and `production` as "groups" your gems can belong to.  Rails sets up three different environments for you with options to configure them differently. So far we've been working on our applications in *development*.
+
+**The asset pipeline is designed for *production* applications.** That's when we care about *speed*!
+
+#### How to Precompile
 
 To turn your *many* JavaScript and CSS files into *one* JavaScript file and *one* CSS file in development, you can "precompile" your assets.  We will almost never need to precompile assets during development, but try it today to see what it does.
 
@@ -128,11 +129,11 @@ To destroy your precompiled assets in development, simply run:
 ➜  rake assets:clobber
 ```
 
-Note you will typically only precompile your assets in development for debugging purposes. You'll set up your app to automatically precompile assets when deploying to production (we'll get to this later, when we learn about pushing to Heroku with Rails).
+Note you will typically only precompile your assets in development for debugging purposes. You'll set up your app to automatically precompile assets when deploying to production (we'll look at this when push to Heroku with Rails).
 
 ### Caching
 
-Your application can be configured to "cache" common JavaScript and CSS files in the client's browser.
+A web application can be configured to "cache" common JavaScript and CSS files in the client's browser.
 
 Cached files don't need to be requested *on every page load*. They're already there, ready to go, meaning **less wait time** and **faster page loads**.
 
@@ -142,7 +143,7 @@ We need a way to "bust" the cache!
 
 #### Cache-Busting with Fingerprints
 
-In Rails, assets are given a "fingerprint" that changes every time the file is updated. The technique the asset pipeline uses is to insert a hash of the content into the name, usually at the end.
+By default, Rails enables caching. In Rails, assets are given a "fingerprint" that changes every time the file is updated. The technique the asset pipeline uses is to insert a hash of the content into the name, usually at the end.
 
 For example, the `application.js` file with a fingerprint looks like this: `application-908e25f4bf641868d8683022a5b62f54.js`.
 
