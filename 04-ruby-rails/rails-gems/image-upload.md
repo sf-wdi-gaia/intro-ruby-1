@@ -1,24 +1,22 @@
-# How to Upload an Image on Rails
-
-
-## Paperclip & AWS S3
+# Upload an Image on Rails 
 
 [Another source](https://devcenter.heroku.com/articles/paperclip-s3)
 
+### Paperclip 
 
-1. Install `imagemagick` on your computer
+1. Install `imagemagick` on your computer.
 
   ```bash
   $ brew install imagemagick
   ```
 
-1. Add Paperclip to your Gemfile
+1. Add Paperclip to your Gemfile.
 
   ```ruby
   gem 'paperclip'
   ```
 
-1. Add paperclip code to your `User` model
+1. Add paperclip code to your `User` model.
 
   ```ruby
   class User < ActiveRecord::Base
@@ -27,7 +25,7 @@
   end
   ```
 
-  the `:styles` attribute creates various styles of image that are accessible with these helpers:
+  The `:styles` attribute creates various styles of images, which will be accessible later with paperclip url helpers:
 
   ```
     <%= image_tag @user.avatar.url %>
@@ -51,14 +49,16 @@
 
 1. `rake db:migrate`
 
-1. Add a file to your users#new form
+1. Add a file to your `users#new` form
 
   ```
   <%= f.file_field :avatar %>
   ```
   Remember to add `:avatar` to `user_params`
 
-1. This should work to save images now locally, but it won't work in heroku. In order to save images in heroku you'll need to setup an S3 bucket.
+### Image Hosting with AWS S3
+
+This solution works locally, but in order to save images in the cloud you'll need to set up an Amazon S3 bucket.
 
 1. Sign into an Amazon Web Services (AWS) account and select S3. Create a new bucket. Get your API keys.  **PROTECT THIS API KEY -- DO NOT COMMIT TO GITHUB!!**
 
@@ -71,10 +71,10 @@
   ```
 > **Remember** to add your `.env` file to your `.gitignore`!
 
-1. Add the aws-sdk gem and path in paperclip
+1. Add the `aws-sdk` gem, and update the `path` in paperclip's options (in the User model).
 
   ```ruby
-  gem 'aws-sdk', '~> 1.6'
+  gem 'aws-sdk'
   ```
 
   ```ruby
