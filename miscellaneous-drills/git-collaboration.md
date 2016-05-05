@@ -41,7 +41,7 @@ Fetching, merging, and pulling are related commands that you will frequently use
 
 [`git pull`](https://git-scm.com/docs/git-pull) is the combination of fetching and merging to the newly fetched version of the current branch.
 
-## Create a merge conflict
+## Create and resolve a merge conflict
 
 1. Pair up. Have one partner create a brand new repository on GitHub and [add your partner as a collaborator](https://help.github.com/articles/adding-collaborators-to-a-personal-repository/).
 2. The person who created the GitHub repository should create a new rails app locally, generate one controller, edit the readme, and push the newly scaffolded app to the remote repository.
@@ -50,7 +50,7 @@ Fetching, merging, and pulling are related commands that you will frequently use
 5. Now, have the original repo creator commit and push the work to GitHub.
 6. The collaborator should commit their changes and then `git pull`.
 7. We hope that we have created a merge conflict. [Resolve the merge conflict](https://github.com/SF-WDI-LABS/shared_modules/blob/master/how-to/github-collaboration-workflow.md#resolving-merge-conflicts-locally) on one of your computers and push the fixes to GitHub.  
-8. BONUS: Create a feature branch
+8. BONUS: Both collaborators create a feature branch and work on the same three files. Push your branches up to GitHub. Both of you fetch the whole repo. (You can check that you have all of the branches with `git branch`-that will print all of the branch names.) Now each of you merge your collaborator's feature branch into yours and resolve the conflict.
 8. Feel free to delete this dummy repository from your local machine and from GitHub. This workflow was intentionally sloppy and I'm hoping that you learned a little bit of what *not* to do.
 
 
