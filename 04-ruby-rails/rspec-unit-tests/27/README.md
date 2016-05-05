@@ -97,65 +97,27 @@ To run only a specific set of tests, type `rspec` and the file path for the test
   # run only specs for `ArticlesController`
   rspec spec/controllers/articles_controller_spec.rb
 
-  # To run a single spec inside a file:
+  # To search for and run a single spec inside a file:
   rspec spec/controllers/articles_controller_spec.rb -e 'is cute'
   ```
 
   Run `rspec` from the terminal now to check that your install worked.
 
 ## Writing rspec-rails Tests
-<!--
-### Cool Tool: FFaker
-
-FFaker generates random data for us! We can use it to create fake data for tests. For example, `FFaker::Name.first_name` generates a fake first name. `FFaker::Internet.email` generates a fake email. To see more that FFaker can do, check out the [FFaker docs](http://www.rubydoc.info/github/emmanueloga/ffaker/FFaker) and/or this [handy FFaker cheatsheet](http://ricostacruz.com/cheatsheets/ffaker.html).
-
-**Bonus:** Later, we can use FFaker to seed our database (but hold off!).
-
-  ```ruby
-  #
-  # db/seeds.rb
-  #
-
-  25.times do
-    Student.create(
-      first_name: FFaker::Name.first_name,
-      last_name: FFaker::Name.last_name,
-      grade: rand(9..12),
-      yearbook_quote: FFaker::HipsterIpsum.sentence(5)
-    )
-  end
-  ```
-
-  ```bash
-  $ rake db:seed
-  ```
-
-To add FFaker to your project, put it in your Gemfile for the development and test groups:
-
-  ```ruby
-  #
-  # Gemfile
-  #
-  group :development, :test do
-    gem 'ffaker'
-  end
-  ```
-
-Then run `bundle` in your terminal. -->
 
 ### Anatomy of a test
 
 A test should consist of:
 
-1. Setup: Using `let` or `before` or `subject` to preconfigure data that is needed to test or set the test subject.  You can keep your code dry by re-using these across multiple tests.
+1. **Setup**: Using `let` or `before` or `subject` to preconfigure data that is needed to test or set the test subject.  You can keep your code dry by re-using these across multiple tests.
 
-1. Definition: A name for the test.  This should use an active verb.  Ex. "is invalid without an email".  This should also be descriptive enough that it can be used as **documentation** by other developers.  _This isn't strictly one of the 4 parts of a test, but it IS really important_, future developers will like you if your test name tells them what the code should do.
+	* Including **Definition**: A name for the test.  This should use an active verb.  Ex. "is invalid without an email".  This should also be descriptive enough that it can be used as **documentation** by other developers.  _This isn't strictly one of the 4 parts of a test, but it IS really important_, future developers will like you if your test name tells them what the code should do.
 
-1. Exercise: Any code inside the test-block itself that makes a change to the object under test prior to validating that it behaves properly.
+1. **Exercise**: Any code inside the test-block itself that makes a change to the object under test prior to validating that it behaves properly.
 
-1. Validation: Finally validating that the Object Under Test has behaved in the expected way.  This usually involves using `expect`.
+1. **Validation**: Finally validating that the _Object Under Test_ has behaved in the expected way.  In RSpec this usually involves using `expect`.  Sometimes this is called the **assertion**.
 
-1. Tear-down: Cleaning up after the test.  Usually this is handled for you by RSpec and may include using DatabaseCleaner to wipe the testing database.
+1. **Tear-down**: Cleaning up after the test.  Usually this is handled for you by RSpec and may include using DatabaseCleaner to wipe the testing database.
 
 #### Setup
 
@@ -224,6 +186,8 @@ Test behavior.
 
 ### Testing Models
 
+##### FactoryGirl
+
 We can set up a `User` instance for testing purposes with `User.create` or we can use a tool called FactoryGirl to do this for us.
 
   ```ruby
@@ -251,7 +215,7 @@ We can set up a `User` instance for testing purposes with `User.create` or we ca
   end
   ```
 
-> It's also possible to use FFaker to generate some data either for `User.create` or for FactoryGirl.  But FFaker can run into intermittent issues because it can produce duplicate data or results you may not expect.  Therefore many people prefer to use FactoryGirl `sequence`.  
+> It's also possible to use FFaker to generate some data either for `User.create` or for FactoryGirl.  But FFaker can run into intermittent issues because it can produce duplicate data or results you may not expect.  Therefore many developers prefer to use FactoryGirl's `sequence`.  
 
 Assuming we've already set `user` with first and last names, we can then test that the `full_name` method correctly calculates the full name:
 
@@ -290,6 +254,7 @@ Validating that a Post is invalid without a title:
 ```
 
 The same test as above written using shoulda:
+
 ```ruby
 it { should validate_presence_of(:title) }
 ```
