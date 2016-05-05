@@ -96,5 +96,5 @@
 Image still not loading? Here are some things to check:
 
   * Is your image uploading? Check in the bucket
-  * Are you getting an "Access Denied" error? Check that your AWS credentials are right in you `.env` file.
+  * Are you getting an "Access Denied" error? Check that your AWS credentials are right in your `.env` file.
   * Are you getting other bogus stuff!?
