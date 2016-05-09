@@ -2,10 +2,27 @@
 
 | Objectives |
 |------------|
+| Know what the term 'unobtrusive javascript' means |
 | Be able to use JS in Rails and take advantage of the Asset Pipeline's minification |
 | Be able to scope JavaScript to specific pages. |
 | Be able to make use of turbolinks to dramatically speed up your app. |
 | Be able to use JS alongside turbolinks |
+
+# Unobtrusive JavaScript in Rails
+
+Rails - on it's own follows the conventions of **unobtrusive javascript**.  The Rails devs suggest that we do the same.  
+
+Basic guidelines:
+
+* To separate JavaScript from HTML markup, as well as keeping modules of JavaScript independent of other modules.
+* Unobtrusive JavaScript should degrade gracefully - all content should be available without all or any of the JavaScript running successfully.
+* Unobtrusive JavaScript should not degrade the accessibility of the HTML, and ideally should improve it, whether the user has personal disabilities or are using an unusual, or unusually configured, browser.
+
+> From: Flanagan, David (2006). JavaScript: The Definitive Guide (5th ed.). O'Reilly & Associates. p. 241. ISBN 0-596-10199-6.
+
+Rails comes with some JavaScript helpers built-in.  These all try to degrade gracefully - the view elements affected will still work even if the JS doesn't load or run as expected.
+
+The tools that we discuss below can all be used to follow the unobtrusive javascript guidelines.  For example, the asset pipeline makes it easy for us to organize our files and your app will work just fine even if turbolinks isn't there.
 
 
 # Using JavaScript in Rails is a little different...
@@ -145,4 +162,3 @@ Anywhere and _most_ things will work as expected.
 ## Resources
 
 * [turbolinks](https://github.com/turbolinks/turbolinks-classic/tree/2-5-stable) classic 2.5.  Note that this version is in use in Rails 4 but is now deprecated.  Turbolinks 3 was planned for rails 5 but development was discontinued.  A new re-write is currently being written.
-* 
