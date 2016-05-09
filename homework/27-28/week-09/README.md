@@ -6,13 +6,15 @@ If you have any remaining time, please complete/review the exercises from dawn a
 
 Please refer to the [Instructions for Submitting Homework](/how-to/homework-submission.md).
 
-<!--
 ## Day 1
 
-1. Reading
-    * [Example](#example)
-2. Bonus/Stretch
-    * [Example](#example)
+1. In preparation for tomororw, please read the Rails Guide on [The Asset Pipeline](http://guides.rubyonrails.org/asset_pipeline.html) -- Sections [1](http://guides.rubyonrails.org/asset_pipeline.html#what-is-the-asset-pipeline-questionmark) & [2](http://guides.rubyonrails.org/asset_pipeline.html#in-production).
+2. We recommend you document 3+ outstanding bugs/feature-requests/enhancements in your vagabond app, using [Github Issues](https://guides.github.com/features/issues/). It's good practice, and it will make it easier to pick up where you left off. Make sure to include:
+  - How to reproduce the bug ("As a user, I visit page, scroll down...")
+  - Specific error message(s)
+  - Specific line numbers
+  - Priority Level -- 0,1,2,3,4...? (see [examples](https://bugs.opera.com/help/issueTypes.html))
+  - Screenshots, Labels, Assignee, etc (optional)
 
 Please use any remaining time to complete and review the exercises from dawn & dusk:
 
