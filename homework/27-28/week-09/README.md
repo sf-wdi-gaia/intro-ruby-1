@@ -16,10 +16,7 @@ Please refer to the [Instructions for Submitting Homework](/how-to/homework-subm
   - Priority Level -- 0,1,2,3,4...? (see [examples](https://bugs.opera.com/help/issueTypes.html))
   - Screenshots, Labels, Assignee, etc (optional)
 
-Please use any remaining time to complete and review the exercises from dawn & dusk:
-
-* [Example](#example)
-* [Example](#example)
+Please use any remaining time to brush up on any area of rails you feel fuzzy on (views, view_helpers, routing, controllers, helper methods, sessions, auth, active record...).
 -->
 
 <!-- 
