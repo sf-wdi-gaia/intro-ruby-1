@@ -13,7 +13,7 @@ Additional gems are listed [here](https://github.com/markets/awesome-ruby) and [
 > You are welcome to suggest your own!
 
 ####Active Record Plugins
-* **Active Record Nesting**: Awesome nested set | Ancestry | Acts as tree | [Closure Tree](#Noah) | Better nested set
+* **Active Record Nesting**: Awesome nested set | Ancestry | Acts as tree | Closure Tree | Better nested set
 * **Active Record Soft Delete**: rails3_acts_as_paranoid | paranoia | Acts as paranoid | Acts as archive | Permanent records
 * **Active Record Sortables**: Acts as list | ranked-model | Sortable | Resort
 * **Active Record User Stamping**: Userstamp | User stamp | Acts as audited | Record activities | Acts as loggable
@@ -25,18 +25,18 @@ Additional gems are listed [here](https://github.com/markets/awesome-ruby) and [
 * **Rails Tagging**: Acts-as-taggable-on | Is taggable | rocket_tag | Acts as taggable redux | Acts as taggable on steroids
 
 ####Background Processing
-* **Background Jobs**: Resque | Delayed job | [sidekiq](#Daniel) | Bunny | Beanstalkd
+* **Background Jobs**: Resque | Delayed job | Daniel | Bunny | Beanstalkd
 * **Scheduling**: Whenever | resque-scheduler | Rufus-scheduler | Clockwork | Craken
 
 ####Code Quality
-* **Code Metrics**: SimpleCov | Rails best practices | Rcov | [rubocop](#Thomas) | Cane
+* **Code Metrics**: SimpleCov | Rails best practices | Rcov | rubocop | Cane
 
 ####Communication
 * **Asynchronous E-Mail**: Resque Mailer | Mail queue | Mailhopper | Resque Mail Queue
 * **CRM Apps**: Fat free crm | Mongo crm | railscrm | myitcrm2 | Cohort
 * **E-Mail Preview**: Letter Opener | MailCatcher | mail_view | Rails Email Preview | sanitize_email
-* **E-Mail Processing**: [SendGrid](https://gist.github.com/trebloc/dd6dc9439d4381133e5c) | Mailman | Fetcher | griddler | newman | Mail fetcher
-* **E-Mail Sending**: [Action Mailer](#Doug) | Mail | Pony | Tmail | capistrano_mailer
+* **E-Mail Processing**: SendGrid | Mailman | Fetcher | griddler | newman | Mail fetcher
+* **E-Mail Sending**: Action Mailer | Mail | Pony | Tmail | capistrano_mailer
 * **Forum Systems**: forem | Altered beast | thredded | forum_monster
 * **Inline CSS for E-Mail**: premailer | Roadie | mail_style | inline-style | premailer-rails3
 
@@ -47,7 +47,7 @@ Additional gems are listed [here](https://github.com/markets/awesome-ruby) and [
 * **Wiki Apps**: Gollum | Git-wiki | Instiki | irwi | Olelo
 
 ####CSS
-* **CSS with Ruby**: [Sass](https://gist.github.com/kehontas/d153f23c992b7c6ababd) | Compass | sass-rails | bootstrap-sass | twitter-bootstrap-rails
+* **CSS with Ruby**: Sass | Compass | sass-rails | bootstrap-sass | twitter-bootstrap-rails
 * **Font-Face Servers**: Fontue | Fistface
 
 ####Data Persistence
@@ -55,7 +55,7 @@ Additional gems are listed [here](https://github.com/markets/awesome-ruby) and [
 * **Redis Clients**: Redis Ruby | Redis Store | Redis Objects | Ohm | redis_orm
 
 ####Developer Tools
-* **Benchmarking**: [method_profiler](#Doug) | rbench | bench_press | better-benchmark | Tach
+* **Benchmarking**: method_profiler | rbench | bench_press | better-benchmark | Tach
 * **CLI Option Parsers**: highline | Slop | cocaine | mixlib-cli | Trollop
 * **Configuration Management**: dotenv | settingslogic | Figaro | dotenv-rails | configuration
 * **git Tools**: Grit | githug | Ruby/Git | rugged | gitolite
@@ -71,16 +71,16 @@ Additional gems are listed [here](https://github.com/markets/awesome-ruby) and [
 * **Reports & Spreadsheets**: spreadsheet | axlsx | roo | Ruport | google-spreadsheet-ruby
 
 ####E-Commerce and Payments
-* **Online Shops**: [Spree](https://gist.github.com/revalidate/055abc883171e97f22b1) | RoR eCommerce | Invoicing | Shippinglogic | nimbleshop
-* **Payments**: Active Merchant | braintree | [Stripe](#Doug) | paypal_adaptive | paypal-express
+* **Online Shops**: Spree | RoR eCommerce | Invoicing | Shippinglogic | nimbleshop
+* **Payments**: Active Merchant | braintree | Stripe | paypal_adaptive | paypal-express
 * **Subscription Management**: Freemium | jackpot | fastspring-saasy | SubscriptionFu
 
 ####Graphics
 * **Graphing**: Lazy high charts | Googlecharts | [Gruff](#Joe) | Open flash chart | Tufte-graph
 * **Image Processing**: chunky_png | RMagick | MiniMagick | Image science | image_sorcery
-* **QR Codes**: [rqrcode](https://gist.github.com/anonym0us3/d10a126e5f84898249fb) | rqrcode-rails3 | rqrcode_png | zxing | zbar
-* **Visualizing Data**: [Raphael](https://gist.github.com/isangieri/d06ce730f4477565bbb1) | ruby-graphviz
-* **Video** [Streamio FFMPEG](#Danny)
+* **QR Codes**: rqrcode | rqrcode-rails3 | rqrcode_png | zxing | zbar
+* **Visualizing Data**: Raphael | ruby-graphviz
+* **Video** Streamio FFMPEG
 
 ####HTML & Markup
 * **Breadcrumb Builders**: breadcrumbs_on_rails | crummy | gretel | breadcrumbs | ariane
@@ -120,7 +120,7 @@ Additional gems are listed [here](https://github.com/markets/awesome-ruby) and [
 * **Rails Admin Interfaces**: ActiveAdmin | Rails Admin | ActiveScaffold | Typus | Streamlined
 * **Rails App Templates**: rails3-application-templates | rails_apps_composer | Rails-templates | Suspenders | Bigoldrailstemplate
 * **Rails File Uploads**: Paperclip | Carrierwave | Attachment fu | Dragonfly | Imagery
-* **Rails Permalinks & Slugs**: [FriendlyId](https://gist.github.com/mseegan/aec954a20618d2183e25) | Stringex | Babosa | Permalink fu | ObfuscateId
+* **Rails Permalinks & Slugs**: FriendlyId | Stringex | Babosa | Permalink fu | ObfuscateId
 * **Rails Presenters**: Draper | Cells | Apotomo | Active presenter | ActiveDecorator
 * **Rails Subdomains**: Subdomain-fu | Subdomain routes | Subdomain account | Sso what
 * **Recommendation Engines**: recommendify | recommendable | coletivo | Slope One
@@ -130,8 +130,8 @@ Additional gems are listed [here](https://github.com/markets/awesome-ruby) and [
 ####Security
 * **Encryption**: Attr encrypted | Strongbox | crypt_keeper | symmetric-encryption | Sentry
 * **Rails Authentication**: Devise | OmniAuth | Authlogic | Restful-authentication | Sorcery
-* **Rails Authorization**: [Cancan](#Breon) | Declarative authorization | rolify | pundit | Acl9
-* **Rails Captcha**: [Recaptcha](https://gist.github.com/Kranjbar/2d580cd32aa8f8b87ede) | Negative-captcha | Simple-captcha-mirror | galetahub-simple_captcha | humanizer
+* **Rails Authorization**: Cancan | Declarative authorization | rolify | pundit | Acl9
+* **Rails Captcha**: Recaptcha | Negative-captcha | Simple-captcha-mirror | galetahub-simple_captcha | humanizer
 * **Security Tools**: brakeman | Loofah | Tarantula | Xss terminate | Rails xss
 * **Spam Detection**: Rakismet | Defender | Defensio-ruby | Akismetor | Rdefensio
 
@@ -140,7 +140,7 @@ Additional gems are listed [here](https://github.com/markets/awesome-ruby) and [
 
 ####Time & Space
 * **Calendars**: Event calendar | ri_cal | Calendar helper | icalendar | Weekly builder
-* **Geocoding & Maps**: [Geocoder](https://gist.github.com/bw-giraffe/28a72f8f64b555ebe16c) | Geokit | gmaps4rails | RGeo | Geokit-rails
+* **Geocoding & Maps**: Geocoder | Geokit | gmaps4rails | RGeo | Geokit-rails
 * **I18n**: I18n | i18n-js | R18n | http_accept_language | Translate routes
 * **Natural Language Date Parsing**: Chronic | Chronic Duration | Nickel | Tickle | kronic
 * **Recurring Events**: Ice cube | Recurrence | Schedule fu | Runt | Recurring event
