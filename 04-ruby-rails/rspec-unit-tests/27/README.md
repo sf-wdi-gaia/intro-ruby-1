@@ -3,6 +3,7 @@
 
 | Objectives |
 | :---- |
+| Understand the difference between unit and integration tests. |
 | Identify various aspects of Rails apps that we might want to test.|
 | Test model methods using rspec-rails. |
 | Test controller actions using rspec-rails. |
@@ -16,6 +17,23 @@
 | [FactoryGirl](https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md) | Factories let you build up objects quickly for your specs |
 | [DatabaseCleaner](https://github.com/DatabaseCleaner/database_cleaner) | Cleans out your database before each test. |
 
+
+
+## Unit tests
+
+Tests can be broadly split into two categories.  **Unit Tests** and **Integration Tests**.  Both are important.
+
+In **Unit Tests** which we'll talk about today we try to isolate each component (or class/method) and test it on it's own.  We separate our Controllers from our Views and test the boundary of its interface.  
+Unit tests tend to run faster because we're testing small components.  By having to isolate components from each other to test them we're forced to write better OO code.  The functionality can't blur across several modules without us having to do a lot of work in the test to stub that out.
+
+In **Integration Tests** we combine components together, sometimes just a few and other times the entire system.  In Rails, integration tests often drive a browser and test the entirety of the system--the full request response cycle.  These tests tend to take much longer to run.  They test the collusion of components and that the interface between them is behaving as we expect.
+
+**Both types of tests are important.**  There are also other types but they can generally be broken down into finer grained versions of the above.  Together the Unit and Integration tests you write become part of your test suite.
+
+
+## How are tests used in industry?
+
+Many companies require that all the code they develop comes with tests.  Often before merging code into master, the entire test suite is run and all tests must pass.  
 
 ## rspec-rails
 
