@@ -16,13 +16,13 @@ Rails has a couple of features that make using javascript on your pages a little
 
 ##### built-in Unobtrusive JavaScript helpers
 
-Rails makes it easy to turn on some simple JavaScript with a single line of code.  All of these helpers degrade gracefully on browsers with incomplete support.
+Rails makes it easy to turn on some simple JavaScript with a single key:value.  All of these helpers degrade gracefully on browsers with incomplete support.
 
 ##### the Asset Pipeline
 
 The asset pipeline is there to help speed up our pages.  It combines all of our JS files into one minified (in production) JS file.  That means that **all your JS code runs on every page**.
 
-If you have a `$('img').on('click')` it's going to be called for every image in your app on every page.
+If you have a `$('img').on('click'` it's going to be called for every image in your app on every page.
 
 ##### Turbolinks
 
@@ -35,7 +35,7 @@ As you've seen we can simply [disable turbolinks](http://blog.steveklabnik.com/p
 
 Rails - on it's own follows the conventions of **unobtrusive javascript**.  The Rails devs suggest that we do the same.  
 
-Basic guidelines:
+Basic **Unobtrusive JavaScript** guidelines:
 
 * To separate JavaScript from HTML markup, as well as keeping modules of JavaScript independent of other modules.
 * Unobtrusive JavaScript should degrade gracefully - all content should be available without all or any of the JavaScript running successfully.
@@ -51,7 +51,13 @@ The tools that we discuss below can all be used to follow the unobtrusive javasc
 ### Working with the unobtrusive driver
 
 You've probably already used it to display a pop-up alert: `data: {confirm: "Are you sure?"}`
+
+```html
+<%= link_to 'Delete Album', album, method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure you want to delete '#{album.name}'?" } %>
+```
+
 This is just one of the many available helpers provided by the jquery_ujs gem included in Rails.  Others include: 
+
 
 * "data-disable-with": Automatic disabling of links and submit buttons in forms
 * "data-method": Links that result in POST, PUT, or DELETE requests
