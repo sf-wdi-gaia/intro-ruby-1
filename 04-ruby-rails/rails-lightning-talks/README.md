@@ -47,7 +47,7 @@ Additional gems are listed [here](https://github.com/markets/awesome-ruby) and [
 * **Wiki Apps**: Gollum | Git-wiki | Instiki | irwi | Olelo
 
 ####CSS
-* **CSS with Ruby**: Sass | Compass | sass-rails | bootstrap-sass | twitter-bootstrap-rails
+* **CSS with Ruby**: Sass | Compass | sass-rails | bootstrap-sass
 * **Font-Face Servers**: Fontue | Fistface
 
 ####Data Persistence
