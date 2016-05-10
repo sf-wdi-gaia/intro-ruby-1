@@ -18,13 +18,12 @@ Please refer to the [Instructions for Submitting Homework](/how-to/homework-subm
 
 Please use any remaining time to brush up on any area of rails you feel fuzzy on: views, view_helpers, routing, controllers, helper methods, sessions, auth, active record, validations, etc.
 
-<!-- 
 ## Day 2
 
-1. Reading
-2. Bonus/Stretch
+1. Please review the requirements for [Project 2](https://github.com/sf-wdi-27-28/project-2-28), and prepare to pitch tomorrow afternoon! The crazier the idea, the better! Just make sure it's "in scope".
+2. Explore your Lightning Talk topic and finalize your gist / presentation.
 
-Please use any remaining time to complete and review the exercises from dawn & dusk. 
+Please use any remaining time to complete and review the exercises from dawn & dusk, like: [asset pipeline](https://github.com/SF-WDI-LABS/shared_modules/tree/master/04-ruby-rails/asset-pipeline/27) and [turbolinks](https://github.com/sf-wdi-27-28/turbolinks_challenge). Take a look at the solution branches!
 -->
 
 <!-- 
