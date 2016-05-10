@@ -115,8 +115,7 @@ ____
   
 ### What is turbolinks?
   
-**Turbolinks is magic**.  It uses JavaScript to take over all the `<a href` tags.  
-
+**Turbolinks is magic**.  It uses JavaScript to take over all the `<a href=...` tags.  
 
 
 When the user clicks a link: 
@@ -152,13 +151,45 @@ With turbolinks we have a few considerations to keep in mind.
 Most of the time you can safely just switch to using 
 
 ```js
-$(document).on('ready page:load', function...
+$(document).on('page:load', function...
+// or 
+$(document).on('page:change', function...
 ```
 
 Anywhere and _most_ things will work as expected.  
 
+##### turbolinks events
+> from https://github.com/turbolinks/turbolinks-classic
+
+With Turbolinks pages will change without a full reload, so you can't rely on `DOMContentLoaded` or `jQuery.ready()` to trigger your code. Instead Turbolinks fires events on `document` to provide hooks into the lifecycle of the page.
+
+Event                | Argument `originalEvent.data` | Notes
+-------------------- | ----------------------------- | -----
+`page:before-change` | `{url}`                       | The page is about to change. **Cancellable with `event.preventDefault()`.** Does not fire on history back/forward.
+`page:fetch`         | `{url}`                       | A new page is about to be fetched from the server.
+`page:receive`       | `{url}`                       | A page has been fetched from the server, but not yet parsed.
+`page:before-unload` | `[affectedNodes]`             | Nodes are about to be changed.
+`page:change`        | `[affectedNodes]`             | Nodes have changed. **Also fires on `DOMContentLoaded`.**
+`page:update`        |                               | Fired alongside both `page:change` and jQuery's `ajaxSuccess` (if available).
+`page:load`          | `[newBody]`                   | A new body element has been loaded into the DOM. **Does not fire on partial replacement or when a page is restored from cache, so as not to fire twice on the same body.**
+`page:partial-load`  | `[affectedNodes]`             | New elements have been loaded into the DOM via partial replacement.
+`page:restore`       |                               | A cached body element has been loaded into the DOM.
+`page:after-remove`  | `affectedNode`                | An element has been removed from the DOM or body evicted from the cache and must be cleaned up. jQuery event listeners are cleaned up automatically.
+
+**Example: load a fresh version of a page from the server** 
+
+* page:before-change a Turbolinks-enabled link has been clicked (see below for more details)
+* page:fetch starting to fetch a new target page
+* page:receive the page has been fetched from the server, but not yet parsed
+* page:before-unload the page has been parsed and is about to be changed
+* page:change the page has been changed to the new version (and on DOMContentLoaded)
+* page:update is triggered alongside both page:change and jQuery's ajaxSuccess (if jQuery is available - otherwise you can manually trigger it when calling XMLHttpRequest in your own code)
+* page:load is fired at the end of the loading process.
 
 
 ## Resources
 
 * [turbolinks](https://github.com/turbolinks/turbolinks-classic/tree/2-5-stable) classic 2.5.  Note that this version is in use in Rails 4 but is now deprecated.  Turbolinks 3 was planned for rails 5 but development was discontinued.  A new re-write is currently being written.
+* [Unobtrusive Javascript on Wikipedia](https://en.wikipedia.org/wiki/Unobtrusive_JavaScript)
+* [Working with JavaScript in Rails](http://guides.rubyonrails.org/working_with_javascript_in_rails.html)
+* jQuery-ujs [data-remote](https://github.com/rails/jquery-ujs/wiki/ajax) docs.
