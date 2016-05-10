@@ -8,26 +8,15 @@
 | Be able to make use of turbolinks to dramatically speed up your app. |
 | Be able to use JS alongside turbolinks |
 
-# Unobtrusive JavaScript in Rails
-
-Rails - on it's own follows the conventions of **unobtrusive javascript**.  The Rails devs suggest that we do the same.  
-
-Basic guidelines:
-
-* To separate JavaScript from HTML markup, as well as keeping modules of JavaScript independent of other modules.
-* Unobtrusive JavaScript should degrade gracefully - all content should be available without all or any of the JavaScript running successfully.
-* Unobtrusive JavaScript should not degrade the accessibility of the HTML, and ideally should improve it, whether the user has personal disabilities or are using an unusual, or unusually configured, browser.
-
-> From: Flanagan, David (2006). JavaScript: The Definitive Guide (5th ed.). O'Reilly & Associates. p. 241. ISBN 0-596-10199-6.
-
-Rails comes with some JavaScript helpers built-in.  These all try to degrade gracefully - the view elements affected will still work even if the JS doesn't load or run as expected.
-
-The tools that we discuss below can all be used to follow the unobtrusive javascript guidelines.  For example, the asset pipeline makes it easy for us to organize our files and your app will work just fine even if turbolinks isn't there.
 
 
 # Using JavaScript in Rails is a little different...
 
 Rails has a couple of features that make using javascript on your pages a little bit different.  Those include **the asset pipeline** and **turbolinks**.
+
+##### built-in Unobtrusive JavaScript helpers
+
+Rails makes it easy to turn on some simple JavaScript with a single line of code.  All of these helpers degrade gracefully on browsers with incomplete support.
 
 ##### the Asset Pipeline
 
@@ -41,6 +30,70 @@ Turbolinks will make it so that your `$(document).ready` is only called on the f
 
 As you've seen we can simply [disable turbolinks](http://blog.steveklabnik.com/posts/2013-06-25-removing-turbolinks-from-rails-4).  Later on we'll see how we can work _with turbolinks_.
 
+
+## Unobtrusive JavaScript in Rails
+
+Rails - on it's own follows the conventions of **unobtrusive javascript**.  The Rails devs suggest that we do the same.  
+
+Basic guidelines:
+
+* To separate JavaScript from HTML markup, as well as keeping modules of JavaScript independent of other modules.
+* Unobtrusive JavaScript should degrade gracefully - all content should be available without all or any of the JavaScript running successfully.
+* Unobtrusive JavaScript should not degrade the accessibility of the HTML, and ideally should improve it, whether the user has personal disabilities or are using an unusual, or unusually configured, browser.
+
+> From: Flanagan, David (2006). JavaScript: The Definitive Guide (5th ed.). O'Reilly & Associates. p. 241. ISBN 0-596-10199-6.
+
+
+Rails comes with some JavaScript helpers built-in.  These all try to degrade gracefully - the view elements affected will still work even if the JS doesn't load or run as expected.
+
+The tools that we discuss below can all be used to follow the unobtrusive javascript guidelines.  For example, the asset pipeline makes it easy for us to organize our files and your app will work just fine even if turbolinks isn't there.
+
+### Working with the unobtrusive driver
+
+You've probably already used it to display a pop-up alert: `data: {confirm: "Are you sure?"}`
+This is just one of the many available helpers provided by the jquery_ujs gem included in Rails.  Others include: 
+
+* "data-disable-with": Automatic disabling of links and submit buttons in forms
+* "data-method": Links that result in POST, PUT, or DELETE requests
+
+See more [here](https://github.com/rails/jquery-ujs/wiki/Unobtrusive-scripting-support-for-jQuery).
+
+##### AJAX
+
+There are also several AJAX helpers that degrade gracefully.  
+
+The most important one to know is **`data-remote: true`** which will configure the JavaScript driver to use AJAX with the link, button or form. 
+
+Let's look at an example:
+
+```html
+<!-- some_view.html -->
+<div id='counter'>
+  <p> The count is: <span id='count'><%= @count %></span></p>
+ <%= button_to "Count +1", plus_one_path, remote: true, method: 'post', class: "btn btn-primary"  %>
+</div>
+```
+
+You can see that we've set `remote:true` to use AJAX.  Rails will automatically `preventDefault` on the button but we probably want to do something with the result too.  Let's see how:
+
+The driver adds several new _events_ that we can bind to like `ajax:success` and `ajax:error` and `ajax:before`.
+
+```js
+// somewhere.js
+$(document).on("ajax:success", '.counter', function(e, data) {
+  $('#count').text(data.count);
+});
+$(document).on("ajax:error", '.counter', function(e, xhr, status) {
+  console.log('Oh no! Error!');
+});
+
+```
+
+Checkout [this wiki](https://github.com/rails/jquery-ujs/wiki/ajax) for more details!
+
+> Of course you *can* still use regular jQuery and AJAX.  They just won't have the graceful degrading that you get with the unobtrusive driver.
+
+_____ 
 
 ## Working with the Asset Pipeline
 
@@ -76,7 +129,7 @@ I'm going to give you **two** ways to do this.  There are of course others but t
   <!-- this -->
   <button class="btn" id="save">
   <!-- can be refactored to -->
-  <button class="btn" id="save-post">
+  <button class="btn" id="new-save-post">
   ```
   
   Another alternative might be to scope our jQuery better.
@@ -100,7 +153,7 @@ I'm going to give you **two** ways to do this.  There are of course others but t
 	</body>  
   ```
   
-  Then in our JS we can bind to this.
+  Then in our JS we can bind to the now modified body tag.
   
   ```js
   postNewView = 'body.posts.show';
@@ -192,4 +245,5 @@ Event                | Argument `originalEvent.data` | Notes
 * [turbolinks](https://github.com/turbolinks/turbolinks-classic/tree/2-5-stable) classic 2.5.  Note that this version is in use in Rails 4 but is now deprecated.  Turbolinks 3 was planned for rails 5 but development was discontinued.  A new re-write is currently being written.
 * [Unobtrusive Javascript on Wikipedia](https://en.wikipedia.org/wiki/Unobtrusive_JavaScript)
 * [Working with JavaScript in Rails](http://guides.rubyonrails.org/working_with_javascript_in_rails.html)
+* [Unobtrusive scripting support JQuery](https://github.com/rails/jquery-ujs/wiki/Unobtrusive-scripting-support-for-jQuery)
 * jQuery-ujs [data-remote](https://github.com/rails/jquery-ujs/wiki/ajax) docs.
