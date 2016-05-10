@@ -76,7 +76,7 @@ Additional gems are listed [here](https://github.com/markets/awesome-ruby) and [
 * **Subscription Management**: Freemium | jackpot | fastspring-saasy | SubscriptionFu
 
 ####Graphics
-* **Graphing**: Lazy high charts | Googlecharts | [Gruff](#Joe) | Open flash chart | Tufte-graph
+* **Graphing**: Lazy high charts | Googlecharts | Gruff | Open flash chart | Tufte-graph
 * **Image Processing**: chunky_png | RMagick | MiniMagick | Image science | image_sorcery
 * **QR Codes**: rqrcode | rqrcode-rails3 | rqrcode_png | zxing | zbar
 * **Visualizing Data**: Raphael | ruby-graphviz
