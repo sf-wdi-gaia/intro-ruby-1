@@ -1,5 +1,7 @@
 # Upload an Image on Rails 
 
+# OUT OF DATE
+
 [Another source](https://devcenter.heroku.com/articles/paperclip-s3)
 
 ### Paperclip 
