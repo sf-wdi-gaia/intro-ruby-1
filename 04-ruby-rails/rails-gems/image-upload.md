@@ -1,6 +1,5 @@
 # Upload an Image on Rails 
 
-# OUT OF DATE
 
 **Resources**
 
