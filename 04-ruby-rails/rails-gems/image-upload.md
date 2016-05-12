@@ -2,7 +2,14 @@
 
 # OUT OF DATE
 
-[Another source](https://devcenter.heroku.com/articles/paperclip-s3)
+**Resources**
+
+* [Heroku Dev Center article on Paperclip and S3](https://devcenter.heroku.com/articles/paperclip-s3)
+* [Paperclip gem docs](https://github.com/thoughtbot/paperclip)
+* [Paperclip S3 Storage module docs](http://www.rubydoc.info/gems/paperclip/Paperclip/Storage/S3)
+* [StackOverflow post on path and url configuration for Paperclip and S3](http://stackoverflow.com/questions/11094761/setting-up-buckets-name-placed-domain-style-bucket-s3-amazonaws-com-with-rail)
+* [dotenv gem docs](https://github.com/bkeepers/dotenv)
+* [finding AWS API keys](http://www.cloudberrylab.com/blog/how-to-find-your-aws-access-key-id-and-secret-access-key-and-register-with-cloudberry-s3-explorer/)
 
 ### Paperclip 
 
@@ -22,7 +29,8 @@
 
   ```ruby
   class User < ActiveRecord::Base
-    has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+    has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
+
     validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   end
   ```
@@ -51,7 +59,7 @@
 
 1. `rake db:migrate`
 
-1. Add a file to your `users#new` form
+1. Add a file to your `users#new` form.
 
   ```
   <%= f.file_field :avatar %>
@@ -60,43 +68,59 @@
 
 ### Image Hosting with AWS S3
 
-This solution works locally, but in order to save images in the cloud you'll need to set up an Amazon S3 bucket.
+This solution works locally, but in order to save images in the cloud you'll need to set up an Amazon S3 bucket. S3 will require some secret keys, so you'll also set up a way to use environment variables to store those secret keys. 
 
-1. Sign into an Amazon Web Services (AWS) account and select S3. Create a new bucket. Get your API keys.  **PROTECT THIS API KEY -- DO NOT COMMIT TO GITHUB!!**
+1. For environment variables, add the [dotenv](https://github.com/bkeepers/dotenv) gem to your `Gemfile` **before paperclip**. Then add a `.env` file to the root directory of your project.  
 
-1. Add the [dotenv](https://github.com/bkeepers/dotenv) gem to your `Gemfile` and add a `.env` file to the root of your project. Now add your AWS_BUCKET, AWS_PUBLIC_KEY, and AWS_SECRET to the `.env` file.
+1. **Immediately add this `.env` file to your `.gitignore` and add and commit the `.gitignore` changes.**
+
+1. Sign into an Amazon Web Services (AWS) account and select S3. Create a new bucket. Generate a new API key, and copy both the API key id and the secret key into the `.env` file.  **PROTECT THIS API KEY -- DO NOT COMMIT TO GITHUB!!**
+
+  Now add your `AWS_BUCKET`, AWS_PUBLIC_KEY, and AWS_SECRET to the `.env` file.
 
   ```
-    S3_BUCKET=buckity-bucket
-    S3_PUBLIC_KEY=kafjlajdslfjalsdf
-    S3_SECRET=ajsfkljaksldfjakljdflajdfljad
+  S3_BUCKET_NAME="your bucket name here"
+  AWS_ACCESS_KEY_ID="super secret shhhhh"
+  AWS_SECRET_ACCESS_KEY="do not push me to github"
   ```
-> **Remember** to add your `.env` file to your `.gitignore`!
+  
+  > **Remember** to add your `.env` file to your `.gitignore`! Seriously. 
 
-1. Add the `aws-sdk` gem, and update the `path` in paperclip's options (in the User model).
+
+1. Add the `aws-sdk` gem to your `Gemfile`. Don't forget to bundle.
 
   ```ruby
   gem 'aws-sdk'
   ```
 
-  ```ruby
-  has_attached_file :avatar,
-                    :styles => { :medium => "150x150>", :thumb => "44x44#>" },
-                    :storage => :s3,
-                    :s3_credentials => Proc.new { |a| a.instance.s3_credentials },
-                    :path => "avatars/:id/:style/avatar.:extension",
-                    :default_url => "https://s3.amazonaws.com/<<BUCKET>>/defaults/default_avatar.png"
+  
+1. In your `config/environments/development.rb` and `config/environments/production.rb`, add the following configuration for paperclip:
 
-  def s3_credentials
-    { :bucket => ENV['S3_BUCKET'], :access_key_id => ENV['S3_PUBLIC_KEY'], :secret_access_key => ENV['S3_SECRET'] }
-  end
+  ```ruby
+  # Configure paperclip for uploading photos to AWS S3 bucket
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :bucket => ENV['S3_BUCKET_NAME'],
+    :url => ":s3_domain_url",
+    :path => "/:class/:attachment/:id_partition/:style/:filename",
+    :s3_credentials => {
+      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+      s3_region: nil
+    }
+  }
   ```
-1. Now it should work! Upload a file to see.
+  
+1. Now it should work locally! Upload a file to see it added to your bucket.
+
+1. To get this going on heroku, you need to configur environment variables on heroku's server.  Use [`heroku config:set`](https://devcenter.heroku.com/articles/config-vars) to set the `S3_BUCKET_NAME`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY` on your heroku server. (Copy these values from your `.env` file.)
+
+1. Push your changes to heroku, and upload a file live!
 
 ## Troubleshooting
 
 Image still not loading? Here are some things to check:
 
-  * Is your image uploading? Check in the bucket
-  * Are you getting an "Access Denied" error? Check that your AWS credentials are right in your `.env` file.
-  * Are you getting other bogus stuff!?
+  * Is your image uploading? Check in the bucket.  
+  * Are you getting an "Access Denied" error? Check that your AWS credentials are correct in your `.env` file. Delete your old secret key and generate a new one, if you think you miscopied or mistyped.  
+  * Are you getting other bogus stuff!?  
