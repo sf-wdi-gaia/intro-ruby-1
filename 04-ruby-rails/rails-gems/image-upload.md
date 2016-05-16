@@ -1,4 +1,4 @@
-# Upload an Image on Rails 
+# Upload an Image on Rails
 
 
 **Resources**
@@ -10,7 +10,7 @@
 * [dotenv gem docs](https://github.com/bkeepers/dotenv)
 * [finding AWS API keys](http://www.cloudberrylab.com/blog/how-to-find-your-aws-access-key-id-and-secret-access-key-and-register-with-cloudberry-s3-explorer/)
 
-### Paperclip 
+### Paperclip
 
 1. Install `imagemagick` on your computer.
 
@@ -18,7 +18,7 @@
   $ brew install imagemagick
   ```
 
-1. Add Paperclip to your Gemfile.
+1. Add paperclip to your Gemfile.
 
   ```ruby
   gem 'paperclip'
@@ -58,7 +58,7 @@
 
 1. `rake db:migrate`
 
-1. Add a file to your `users#new` form.
+1. Add a file field to your `users#new` form.
 
   ```
   <%= f.file_field :avatar %>
@@ -67,11 +67,13 @@
 
 ### Image Hosting with AWS S3
 
-This solution works locally, but in order to save images in the cloud you'll need to set up an Amazon S3 bucket. S3 will require some secret keys, so you'll also set up a way to use environment variables to store those secret keys. 
+This solution works locally, but in order to save images in the cloud you'll need to set up an Amazon S3 bucket. S3 will require some secret keys, so you'll also set up a way to use environment variables to store those secret keys.
+
+
+1. You will use a `.env` file to store secret environment varaibles. **Immediately, BEFORE YOU CREATE ANY NEW FILES, add `.env` to your `.gitignore`, then add and commit this `.gitignore` change.**
 
 1. For environment variables, add the [dotenv](https://github.com/bkeepers/dotenv) gem to your `Gemfile` **before paperclip**. Then add a `.env` file to the root directory of your project.  
 
-1. **Immediately add this `.env` file to your `.gitignore` and add and commit the `.gitignore` changes.**
 
 1. Sign into an Amazon Web Services (AWS) account and select S3. Create a new bucket. Generate a new API key, and copy both the API key id and the secret key into the `.env` file.  **PROTECT THIS API KEY -- DO NOT COMMIT TO GITHUB!!**
 
@@ -82,8 +84,8 @@ This solution works locally, but in order to save images in the cloud you'll nee
   AWS_ACCESS_KEY_ID="super secret shhhhh"
   AWS_SECRET_ACCESS_KEY="do not push me to github"
   ```
-  
-  > **Remember** to add your `.env` file to your `.gitignore`! Seriously. 
+
+  > **Remember** to add your `.env` file to your `.gitignore`! Seriously.
 
 
 1. Add the `aws-sdk` gem to your `Gemfile`. Don't forget to bundle.
@@ -92,7 +94,7 @@ This solution works locally, but in order to save images in the cloud you'll nee
   gem 'aws-sdk'
   ```
 
-  
+
 1. In your `config/environments/development.rb` and `config/environments/production.rb`, add the following configuration for paperclip:
 
   ```ruby
@@ -109,10 +111,21 @@ This solution works locally, but in order to save images in the cloud you'll nee
     }
   }
   ```
-  
+
 1. Now it should work locally! Upload a file to see it added to your bucket.
 
-1. To get this going on heroku, you need to configur environment variables on heroku's server.  Use [`heroku config:set`](https://devcenter.heroku.com/articles/config-vars) to set the `S3_BUCKET_NAME`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY` on your heroku server. (Copy these values from your `.env` file.)
+1. Push your changes to GitHub, and check your repository on GitHub. Make sure your `.env` file is not in the repository.
+
+1. **If your `.env` was accidentally checked into GitHub, FOLLOW THESE STEPS IMMEDIATELY:**
+
+  * Delete the current AWS keys according to [Amazon's instructions](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).    
+  * Remove the `.env` file from your GitHub tracking:  `git rm .env`.  
+  * Commit the change to delete the `.env` file from git, and push to carry that change up to GitHub. Make sure every collaborator pulls down this change.   
+  * **Only after you're sure your environment variable file (`.env`) is not on GitHub**, generate new AWS keys according to the current AWS keys according to [Amazon's instructions](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html), and add them to your `.env` file.  Find a secure, off-GitHub way to get your keys to each collaborator.  
+
+### Copy Environment Variables to Heroku
+
+1. To get this going on heroku, you need to configure environment variables on heroku's server.  Use [`heroku config:set`](https://devcenter.heroku.com/articles/config-vars) to set the `S3_BUCKET_NAME`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY` on your heroku server. (Copy these values from your `.env` file.)
 
 1. Push your changes to heroku, and upload a file live!
 
