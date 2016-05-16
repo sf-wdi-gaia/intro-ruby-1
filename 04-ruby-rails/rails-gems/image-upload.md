@@ -121,7 +121,7 @@ This solution works locally, but in order to save images in the cloud you'll nee
   * Delete the current AWS keys according to [Amazon's instructions](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).    
   * Remove the `.env` file from your GitHub tracking:  `git rm .env`.  
   * Commit the change to delete the `.env` file from git, and push to carry that change up to GitHub. Make sure every collaborator pulls down this change.   
-  * **Only after you're sure your environment variable file (`.env`) is not on GitHub**, generate new AWS keys according to the current AWS keys according to [Amazon's instructions](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html), and add them to your `.env` file.  Find a secure, off-GitHub way to get your keys to each collaborator.  
+  * **Only after you're sure your environment variable file (`.env`) is not on GitHub**, generate new AWS keys according  to [Amazon's instructions](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html), and add them to your `.env` file.  Find a secure, off-GitHub way to get your keys to each collaborator.  
 
 ### Copy Environment Variables to Heroku
 
