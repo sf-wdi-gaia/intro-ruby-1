@@ -71,7 +71,7 @@
 This solution works locally, but in order to save images in the cloud you'll need to set up an Amazon S3 bucket. S3 will require some secret keys, so you'll also set up a way to use environment variables to store those secret keys.
 
 
-1. You will use a `.env` file to store secret environment varaibles. **Immediately, BEFORE YOU CREATE ANY NEW FILES, add `.env` to your `.gitignore`, then add and commit this `.gitignore` change.**
+1. You will use a `.env` file to store secret environment varaibles. **Immediately, BEFORE YOU CREATE ANY NEW FILES, add a line that says `.env` to your `.gitignore`, then add and commit this `.gitignore` change.**
 
 1. For environment variables, add the [dotenv](https://github.com/bkeepers/dotenv) gem to your `Gemfile` **before paperclip**. Then add a `.env` file to the root directory of your project.  
 
@@ -119,7 +119,7 @@ This solution works locally, but in order to save images in the cloud you'll nee
 
 1. **If your `.env` was accidentally checked into GitHub, FOLLOW THESE STEPS IMMEDIATELY:**
 
-  * Delete the current AWS keys according to [Amazon's instructions](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).    
+  * Deactivate and delete the current AWS keys according to [Amazon's instructions](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).    
   * Remove the `.env` file from your GitHub tracking:  `git rm .env`.  
   * Commit the change to delete the `.env` file from git, and push to carry that change up to GitHub. Make sure every collaborator pulls down this change.   
   * **Only after you're sure your environment variable file (`.env`) is not on GitHub**, generate new AWS keys according  to [Amazon's instructions](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html), and add them to your `.env` file.  Find a secure, off-GitHub way to get your keys to each collaborator.  
