@@ -8,6 +8,7 @@
 * [Paperclip S3 Storage module docs](http://www.rubydoc.info/gems/paperclip/Paperclip/Storage/S3)
 * [StackOverflow post on path and url configuration for Paperclip and S3](http://stackoverflow.com/questions/11094761/setting-up-buckets-name-placed-domain-style-bucket-s3-amazonaws-com-with-rail)
 * [dotenv gem docs](https://github.com/bkeepers/dotenv)
+* [AWS access key management instructions](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html)
 * [finding AWS API keys](http://www.cloudberrylab.com/blog/how-to-find-your-aws-access-key-id-and-secret-access-key-and-register-with-cloudberry-s3-explorer/)
 
 ### Paperclip
