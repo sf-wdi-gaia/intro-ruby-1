@@ -138,8 +138,9 @@ So in the end, some developers do not write view specs; instead they rely on int
 _But, what if I have a lot of javascript on my pages?_
 
 Test this javascript using:
-1) Unit tests: A javascript testing framework like _jasmine_, _mocha/chai_, _qunit_, or _konacha_.
-2) Integration tests: The built-in waiting ability of Capybara means that it works quite well for testing pages with javascript.
+
+1. Unit tests: A javascript testing framework like _jasmine_, _mocha/chai_, _qunit_, or _konacha_.
+1. Integration tests: The built-in waiting ability of Capybara means that it works quite well for testing pages with javascript.
 
 
 ## Who does this?
