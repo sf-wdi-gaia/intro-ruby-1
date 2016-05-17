@@ -95,9 +95,9 @@ end
 * visit '/login'
 * click_on 'Login'
 * click_link 'About'
-* find('.btn-danger.delete') # takes any valid CSS selector, returns 1
+* find('.btn-danger.delete') # takes any valid CSS selector, returns one matched element
 * all('.btn') # finds all the matches
-* fill_in('Password', :with => 'Seekrit')
+* fill_in('Password', :with => 'Seekrit')  # fill-in a form field
 * select('Red', from: 'Colors')
 
 
@@ -133,7 +133,7 @@ The amount of testing that should be done has always been a subject of debate.  
 
 In rails our views should generally have far more HTML than Ruby.  That means they should be relatively un-complicated.  In fact, if you need more logic in your views you should probably be putting it in helpers (or presenters) and writing tests for those.
 
-So in the end, some developers do not write view specs; instead they rely on integration tests for their simple views.  It's a choice your team should make together.
+So in the end, some developers do not write view specs; instead they rely on integration tests for their simple views.  Many developers do though.  It's a choice your team should make together.
 
 _But, what if I have a lot of javascript on my pages?_
 
