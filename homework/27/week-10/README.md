@@ -13,4 +13,3 @@
 
 1. Create or update your [portfolio](./portfolio.md), and make sure it's deployed publicly online!
 2. Prepare a [lightning talk](./lightning-talk.md) on a technology we haven't covered. (Think about a tool you might want to use in project 3!)
-
