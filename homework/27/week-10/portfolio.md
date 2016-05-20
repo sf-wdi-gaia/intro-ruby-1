@@ -1,6 +1,6 @@
 # Portfolio
 
-You're going to need a portfolio site to showcase the amazing projects you've built in WDI. Over this weekend, start building your portfolio site or update your portfolio site.  The technologies you use are up to you.
+You're going to need a portfolio site to showcase the amazing projects you've built in WDI. Over this weekend, build your portfolio site or update your current portfolio site.  The technologies you use are up to you.
 
 Make sure your site is hosted and live on the web.  If you need a back-end, you can host on Heroku.  If you have a static site, though, you can host with a service like github pages.  
 
@@ -9,7 +9,7 @@ Make sure your site is hosted and live on the web.  If you need a back-end, you 
   1. Create GitHub repo for your portfolio, and create a portfolio website.
 
   2. Include a list of your projects.  Each project description can include things like:
-    - screenshot or gif  
+    - screenshot or project logo
     - elevator pitch / short description  
     - deployed site link  
     - github repo link    
@@ -26,17 +26,17 @@ Make sure your site is hosted and live on the web.  If you need a back-end, you 
 #### Alternating Photo/Description
   [[inspiration]](http://www.randallleung.com)
 
-  ![](wireframes/photo_description.png)
+  <img src="wireframes/photo_description.png" height=400px>
 
 #### Project Cards
   [[inspiration]](http://www.nicolastarier.com)
 
-  ![](wireframes/project_cards.png)
+  <img src="wireframes/project_cards.png" height=400px>
 
 #### Case Study
   The "case study" layout is meant to represent a detailed page for one project. [[inspiration]](http://haraldurthorleifsson.com/googleplus)
 
-  ![](wireframes/case_study.png)
+  <img src="wireframes/case_study.png" height=400px>
 
 ## Resources
 
