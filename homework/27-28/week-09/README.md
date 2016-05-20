@@ -6,28 +6,24 @@ If you have any remaining time, please complete/review the exercises from dawn a
 
 Please refer to the [Instructions for Submitting Homework](/how-to/homework-submission.md).
 
-<!--
 ## Day 1
 
-1. Reading
-    * [Example](#example)
-2. Bonus/Stretch
-    * [Example](#example)
+1. Reading: In preparation for tomororw, please read the Rails Guide on [The Asset Pipeline](http://guides.rubyonrails.org/asset_pipeline.html) -- Sections [1](http://guides.rubyonrails.org/asset_pipeline.html#what-is-the-asset-pipeline-questionmark) & [2](http://guides.rubyonrails.org/asset_pipeline.html#in-production).
+2. Issue Creation: We recommend you document 3+ outstanding bugs/enhancements/features in your Vagabond App, using [Github Issues](https://guides.github.com/features/issues/). It's good practice, and it will make it easier to pick up where you left off. Make sure to include:
+  - How to reproduce the bug ("As a user, I visit page, scroll down...")
+  - Specific error message(s)
+  - Specific line numbers
+  - Priority Level -- 0,1,2,3,4...? (see [examples](https://bugs.opera.com/help/issueTypes.html))
+  - Screenshots, Labels, Assignee, etc (optional)
 
-Please use any remaining time to complete and review the exercises from dawn & dusk:
+Please use any remaining time to brush up on any area of rails you feel fuzzy on: views, view_helpers, routing, controllers, helper methods, sessions, auth, active record, validations, etc.
 
-* [Example](#example)
-* [Example](#example)
--->
-
-<!-- 
 ## Day 2
 
-1. Reading
-2. Bonus/Stretch
+1. Please review the requirements for [Project 2](https://github.com/sf-wdi-27-28/project-2-28), and prepare to pitch tomorrow afternoon! The crazier the idea, the better! Just make sure it's "in scope".
+2. Explore your Lightning Talk topic and finalize your gist / presentation.
 
-Please use any remaining time to complete and review the exercises from dawn & dusk. 
--->
+Please use any remaining time to review (the solutions for) the [asset pipeline](https://github.com/SF-WDI-LABS/shared_modules/tree/master/04-ruby-rails/asset-pipeline/27) and [turbolinks](https://github.com/sf-wdi-27-28/turbolinks_challenge) labs.
 
 <!-- 
 ## Day 3
