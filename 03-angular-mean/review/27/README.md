@@ -77,8 +77,8 @@ Let's check out the [`tunely-angular` sprint 5 solutions branch](https://github.
 This is a fully functional MEAN stack app.You'll be assigned a piece from within this list:
 
 * `public/scripts/app.js`
-* `public/scripts/AlbumsIndexController.js`
-* `public/scripts/AlbumsShowController.js`
+* `public/scripts/controllers/AlbumsIndexController.js`
+* `public/scripts/controllers/AlbumsShowController.js`
 * `views/templates`
 * `views/index.html`
 * `server.js`
