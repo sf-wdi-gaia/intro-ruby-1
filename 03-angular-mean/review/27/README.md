@@ -93,7 +93,7 @@ This is a fully functional MEAN stack app.You'll be assigned a piece from within
 
 Let's investigate these pieces and answer the following questions:
 
-1. Is this server-side code or client side code?
+1. Is this server-side code or client side code? How do you know?
 1. What parts of the MEAN stack does this represent? What technologies are present here (HTML, CSS, middleware, JavaScript, etc.)?
 1.  What is this piece of the application (file or directory) responsible for?
 1. What lines of code are most important for understanding how this works?
