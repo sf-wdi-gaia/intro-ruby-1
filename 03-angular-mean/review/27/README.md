@@ -77,14 +77,14 @@ Let's check out the [`tunely-angular` sprint 5 solutions branch](https://github.
 This is a fully functional MEAN stack app.You'll be assigned a piece from within this list:
 
 * `public/scripts/app.js`
-* `public/scripts/AlbumsIndexController.js`
-* `public/scripts/AlbumsShowController.js`
+* `public/scripts/controllers/AlbumsIndexController.js`
+* `public/scripts/controllers/AlbumsShowController.js`
 * `views/templates`
 * `views/index.html`
 * `server.js`
-* `controllers/albumsContoller.js`
-* `controllers/albumsSongsContoller.js`
-* `controllers/apiContoller.js`
+* `controllers/albumsController.js`
+* `controllers/albumsSongsController.js`
+* `controllers/apiController.js`
 * `controllers/index.js`
 * `models/album.js`
 * `models/index.js`
@@ -93,7 +93,7 @@ This is a fully functional MEAN stack app.You'll be assigned a piece from within
 
 Let's investigate these pieces and answer the following questions:
 
-1. Is this server-side code or client side code?
+1. Is this server-side code or client side code? How do you know?
 1. What parts of the MEAN stack does this represent? What technologies are present here (HTML, CSS, middleware, JavaScript, etc.)?
 1.  What is this piece of the application (file or directory) responsible for?
 1. What lines of code are most important for understanding how this works?
@@ -119,7 +119,7 @@ Write a page to perform an example of two of the following angular directives.
 
 [Reviewing `tunely-angular` sprint 1](https://github.com/SF-WDI-LABS/tunely-angular/blob/master/docs/sprint1.md) may help to get your example set up.
 
-On the [google doc](https://docs.google.com/document/d/1TqeVF1LPKv5I3X-FD157eYtVCbFEMim3Svg9TvBjhRQ/edit), include at least two screen shots that display the evidence that your directives are functioning. Include two or more sentences explaining why these screenshots are evidence of the directives you selected. 
+On the [google doc](https://docs.google.com/document/d/1TqeVF1LPKv5I3X-FD157eYtVCbFEMim3Svg9TvBjhRQ/edit), include at least two screen shots that display the evidence that your directives are functioning. Include two or more sentences explaining why these screenshots are evidence of the directives you selected.
 
 Resources:
 * [Angular introduction notes](https://github.com/SF-WDI-LABS/shared_modules/tree/master/03-angular-mean/intro-angular/27-28)
