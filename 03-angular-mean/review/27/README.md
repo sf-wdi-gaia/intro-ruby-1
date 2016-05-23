@@ -121,6 +121,11 @@ Write a page to perform an example of two of the following angular directives.
 
 On the [google doc](https://docs.google.com/document/d/1TqeVF1LPKv5I3X-FD157eYtVCbFEMim3Svg9TvBjhRQ/edit), include at least two screen shots that display the evidence that your directives are functioning. Include two or more sentences explaining why these screenshots are evidence of the directives you selected.
 
-Resources:
+
+## Lab
+
+The [MEAN stack lab/mini-project](https://github.com/SF-WDI-LABS/mean-lab)
+
+## Resources:
 * [Angular introduction notes](https://github.com/SF-WDI-LABS/shared_modules/tree/master/03-angular-mean/intro-angular/27-28)
 * [An intro to Mongo/Express/Node from WDI25](https://github.com/SF-WDI-LABS/shared_modules/tree/master/03-angular-mean/intro-mean/25)
