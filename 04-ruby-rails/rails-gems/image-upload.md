@@ -11,7 +11,7 @@
 * [AWS access key management instructions](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html)
 * [finding AWS API keys](http://www.cloudberrylab.com/blog/how-to-find-your-aws-access-key-id-and-secret-access-key-and-register-with-cloudberry-s3-explorer/)
 
-### Paperclip
+### Local Uploading with Paperclip
 
 1. Install `imagemagick` on your computer.
 
@@ -66,7 +66,7 @@
   ```
   Remember to add `:avatar` to `user_params`
 
-## Image Hosting with AWS S3
+### Remote Image Hosting with Paperclip and AWS S3
 
 This solution works locally, but in order to save images in the cloud you'll need to set up an Amazon S3 bucket. S3 will require some **secret keys**, so you'll also set up a way to use environment variables to store those secret keys.
 
