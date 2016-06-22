@@ -66,19 +66,35 @@
   ```
   Remember to add `:avatar` to `user_params`
 
-### Image Hosting with AWS S3
+## Image Hosting with AWS S3
 
-This solution works locally, but in order to save images in the cloud you'll need to set up an Amazon S3 bucket. S3 will require some secret keys, so you'll also set up a way to use environment variables to store those secret keys.
+This solution works locally, but in order to save images in the cloud you'll need to set up an Amazon S3 bucket. S3 will require some **secret keys**, so you'll also set up a way to use environment variables to store those secret keys.
 
+
+**Never EVER check a secret key into git**
+
+**If your key has already been checked in, even if you didn't push; go and revoke that key immediately.**
+Hackers can easily scan even OLD commits for keys in minutes.
+
+**HACKERS CAN CHARGE THOUSANDS OF DOLLARS TO YOUR AMAZON WEB SERVICES ACCOUNT IN  JUST A FEW DAYS!**
+
+#### Hiding Secrets Option 1: environment variables
+
+Carefully follow the instructions in our [how to hide secret keys guide](https://github.com/SF-WDI-LABS/shared_modules/blob/master/how-to/store-secrets-using-env-vars.md).
+
+#### Hiding Secrets Option 2: `dotenv` gem
 
 1. You will use a `.env` file to store secret environment varaibles. **Immediately, BEFORE YOU CREATE ANY NEW FILES, add a line that says `.env` to your `.gitignore`, then add and commit this `.gitignore` change.**
 
 1. For environment variables, add the [dotenv](https://github.com/bkeepers/dotenv) gem to your `Gemfile` **before paperclip**. Then add a `.env` file to the root directory of your project.  
 
-
 1. Sign into an Amazon Web Services (AWS) account and select S3. Create a new bucket. Generate a new API key, and copy both the API key id and the secret key into the `.env` file.  **PROTECT THIS API KEY -- DO NOT COMMIT TO GITHUB!!**
 
-  Now add your `AWS_BUCKET`, AWS_PUBLIC_KEY, and AWS_SECRET to the `.env` file.
+
+
+#### Using Secret Keys for Paperclip
+
+1. Add your `AWS_BUCKET`, AWS_PUBLIC_KEY, and AWS_SECRET your secrets file - this will be the `.env` file if you are using the `dotenv` gem or the `secrets.sh` file if you are manually managing your secret keys.
 
   ```
   S3_BUCKET_NAME="your bucket name here"
@@ -86,7 +102,7 @@ This solution works locally, but in order to save images in the cloud you'll nee
   AWS_SECRET_ACCESS_KEY="do not push me to github"
   ```
 
-  > **Remember** to add your `.env` file to your `.gitignore`! Seriously.
+  > **Remember** to add your secret key file to your `.gitignore`! Seriously.
 
 
 1. Add the `aws-sdk` gem to your `Gemfile`. Don't forget to bundle.
@@ -115,14 +131,14 @@ This solution works locally, but in order to save images in the cloud you'll nee
 
 1. Now it should work locally! Upload a file to see it added to your bucket.
 
-1. Push your changes to GitHub, and check your repository on GitHub. Make sure your `.env` file is not in the repository.
+1. Push your changes to GitHub, and check your repository on GitHub. Make sure your secrets file is not in the repository.
 
-1. **If your `.env` was accidentally checked into GitHub, FOLLOW THESE STEPS IMMEDIATELY:**
+1. **If your secret key file was accidentally checked into GitHub, FOLLOW THESE STEPS IMMEDIATELY:**
 
   * Deactivate and delete the current AWS keys according to [Amazon's instructions](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).    
-  * Remove the `.env` file from your GitHub tracking:  `git rm .env`.  
-  * Commit the change to delete the `.env` file from git, and push to carry that change up to GitHub. Make sure every collaborator pulls down this change.   
-  * **Only after you're sure your environment variable file (`.env`) is not on GitHub**, generate new AWS keys according  to [Amazon's instructions](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html), and add them to your `.env` file.  Find a secure, off-GitHub way to get your keys to each collaborator.  
+  * Remove the secrets file from your GitHub tracking:  `git rm .env` or `git rm secrets.sh`.  
+  * Do a git commit to delete the file from git, and push to carry that change up to GitHub. Make sure every collaborator pulls down this change.   
+  * **Only after you're sure your secret environment variable file  is not on GitHub**, generate new AWS keys according  to [Amazon's instructions](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html), and add them to your secrets file.  Find a secure, off-GitHub way to get your keys to each collaborator.  
 
 ### Copy Environment Variables to Heroku
 
@@ -135,5 +151,5 @@ This solution works locally, but in order to save images in the cloud you'll nee
 Image still not loading? Here are some things to check:
 
   * Is your image uploading? Check in the bucket.  
-  * Are you getting an "Access Denied" error? Check that your AWS credentials are correct in your `.env` file. Delete your old secret key and generate a new one, if you think you miscopied or mistyped.  
+  * Are you getting an "Access Denied" error? Check that your AWS credentials are correct in your secrets file. Delete your old secret key and generate a new one, if you think you miscopied or mistyped.  
   * Are you getting other bogus stuff!?  
