@@ -13,7 +13,7 @@
 | Resource | Description |
 | :-------- | ----------- |
 | [RSpec matchers](https://www.relishapp.com/rspec/rspec-expectations/v/3-0/docs/built-in-matchers) | Reference for RSpec |
-| [shoulda](http://matchers.shoulda.io/docs/v3.1.0/) | Magic for model specs |
+| [shoulda matchers](http://matchers.shoulda.io/docs/v3.1.0/) | Magic for model specs |
 | [FactoryGirl](https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md) | Factories let you build up objects quickly for your specs |
 | [DatabaseCleaner](https://github.com/DatabaseCleaner/database_cleaner) | Cleans out your database before each test. |
 
@@ -256,9 +256,9 @@ Assuming we've already set `user` with first and last names, we can then test th
   ```
 
 <!-- exclude if model validations not studied -->
-#### shoulda
+#### shoulda matchers
 
-Previously we talked about model validations.  You'll probably want to test these.  The `shoulda` gem provides an easier way to write specs for common model validations.
+Previously we talked about model validations.  You'll probably want to test these.  The `shoulda-matchers` gem provides an easier way to write specs for common model validations.
 
 Validating that a Post is invalid without a title:
 
@@ -271,14 +271,14 @@ Validating that a Post is invalid without a title:
 
 ```
 
-The same test as above written using shoulda:
+The same test as above written using shoulda matchers:
 
 ```ruby
 it { should validate_presence_of(:title) }
 ```
 
-* shoulda also provides test helpers for controllers
-* See the [shoulda docs](http://matchers.shoulda.io/docs/v3.1.0/)
+* shoulda matchers also provides test helpers for controllers
+* See the [shoulda matchers docs](http://matchers.shoulda.io/docs/v3.1.0/)
 
 ### Testing Controllers
 
@@ -362,7 +362,7 @@ Intermittent test failures are the bane of many a developers life.  It's importa
 ## Other Tools
 
 * [FactoryGirl](https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md)
-* [shoulda](http://matchers.shoulda.io/docs/v3.1.0/) - Make Rails model tests super easy.
+* [shoulda matchers](http://matchers.shoulda.io/docs/v3.1.0/) - Make Rails model tests super easy.
 * [DatabaseCleaner](https://github.com/DatabaseCleaner/database_cleaner) - used to wipe the database before each test, not necessary on smaller apps as tests are rolled-back.
 
 ## Challenges
