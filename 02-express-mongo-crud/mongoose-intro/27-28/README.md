@@ -201,6 +201,7 @@ saved new person:  {
 Notice that mongo has added an `_id` and `__v` attributes.
 
 
+![](https://cloud.githubusercontent.com/assets/4304660/16811660/42d59d40-48de-11e6-99c5-3f68167c08bd.gif)
 
 
 ## CRUD Operations with Mongoose
