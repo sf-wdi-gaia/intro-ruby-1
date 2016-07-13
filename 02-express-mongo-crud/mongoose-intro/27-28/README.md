@@ -7,7 +7,7 @@
 
 ## Review: What are Mongo and Mongoose?
 
-<img src="http://i.imgur.com/MVaVKG8.gif" />
+![tumblr_nbhme6bafu1s02vreo1_500](https://cloud.githubusercontent.com/assets/4304660/16811532/b08865a8-48dd-11e6-9474-c114b2e8a00d.gif)
 
 `MongoDB` is a no-SQL database. `Mongoose` is a library or "wrapper" that gives us a bunch of convenience methods for working with MongoDB records (kind of like jQuery's convenience methods for manipulating the DOM). Generally we will not be interacting _directly_ with MongoDB, instead we'll be working with `mongoose`.
 
@@ -141,56 +141,61 @@ Most databases also require that we specify the data-type for each attribute.  I
 Let's look at this example:
 
 ```js
-// models/console.js
+// models/person.js
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
-var consoleSchema = new mongoose.Schema({
-    name: String,
-    manufacturer: String,
-    released: Date,
-    colors: [String],
-
+var personSchema = new mongoose.Schema({
+    firstName: String,
+    lastName: String,
+    age: Number,
+    superPower: String,
+    weakness: String,
+    isExcited: Boolean
 });
 
-var Console = mongoose.model('Console', consoleSchema);
+var Person = mongoose.model('Person', personSchema);
 
-module.exports = Console;
+module.exports = Person;
+
 ```
 
-In the above note how we've assigned **String**, **Date** and even an **array of strings** as the data-types for this Schema.
+In the above note how we've assigned **String**, **Number** and even a **Boolean** as the data-types for this Schema.
 
 Let's create an instance of this model.
 
 ```js
-// server.js
-var console = require('./models/console')
+  // server.js
+  var Person = require('./models/person');
 
-var nin64 = new Console ({  // you've seen `new` before ;-)
-  name: 'Nintendo 64',
-  manufacturer: 'Nintendo',
-  released: 'September 29, 1996',  // will be converted to string - try it in your browser
-  colors: ['blue', 'black', 'yellow']
-});
+  var justin = new Person({
+      firstName: "Justin",
+      lastName: "Castilla",
+      age: 33,
+      superPower: "Beard",
+      weakness: "Razors",
+      isExcited: true
+  });
 
-nin64.save(function(err, newConsole){
-  if(err) {return console.log(err);}
-  console.log("saved new console: ", newConsole);
-});
+  justin.save(function(err, newPerson){
+    if(err) {return console.log(err);}
+    console.log("saved new person: ", newPerson);
+  });
 ```
 
-The above gives us a model instance that looks like:
+The above logs to the terminal the `newPerson` success object:
 
-```js
-// nin64
-{
-  colors: [ 'blue', 'black', 'yellow' ],
-  _id: '56faff4f06ae92b764a11c3a',
-  released: "Sun Sep 29 1996 00:00:00 GMT-0700 (PDT)",
-  manufacturer: 'Nintendo',
-  name: 'Nintendo 64',
-  __v: 0
-}
+```bash
+saved new person:  { 
+  __v: 0,
+  firstName: 'Justin',
+  lastName: 'Castilla',
+  age: 33,
+  superPower: 'Beard',
+  weakness: 'Razors',
+  isExcited: true,
+  _id: 57866b9f9d89c840336a135e }
+
 ```
 
 Notice that mongo has added an `_id` and `__v` attributes.
