@@ -1,7 +1,7 @@
 
-###An introduction to SQL  
+#An introduction to SQL  
 ###-or-  
-###In which we suffer through databases to appreciate Active Records  
+#In which we suffer through databases to appreciate Active Records  
 <hr>
 
 ##What is a Relational Database (RDB)?
