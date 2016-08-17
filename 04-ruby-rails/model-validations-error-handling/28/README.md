@@ -194,7 +194,7 @@ Just one last step! We've sent `flash` to the view, but we haven't rendered it y
 
 ## Error Pages
 
-<img src="github-500.png" alt="github error status 500 page" height=300>
+<img src="https://cloud.githubusercontent.com/assets/4304660/17744583/381651f2-645d-11e6-8668-157a94ef40e8.png" alt="github error status 500 page" height=300>
 
 >_GitHub's Error Status 500 Page_
 
