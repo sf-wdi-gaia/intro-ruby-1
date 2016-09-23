@@ -1,11 +1,36 @@
-# <img src="https://cloud.githubusercontent.com/assets/7833470/10899314/63829980-8188-11e5-8cdd-4ded5bcb6e36.png" height="60"> Intro Ruby
+<!--
+Creator:
+Location: SF
+-->
 
-| Objectives |
-| :--- |
-| Identify data types, operators, and control flow patterns in JavaScript and utilize them in Ruby |
-| Apply Ruby control flow to create command line applications |
+![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
 
-## Framing for the Week
+# Ruby Intro
+
+### Why is this important?
+<!-- framing the "why" in big-picture/real world examples -->
+*This workshop is important because:*
+
+Ruby is a powerful and popular language for server-side web development. It's the foundation for Ruby on Rails, one of the most prolific frameworks in the web.
+
+### What are the objectives?
+<!-- specific/measurable goal for students to achieve -->
+*After this workshop, developers will be able to:*
+
+- List Ruby data types.
+- Leverage JavaScript experience to recognize patterns and structures in Ruby.
+- Run Ruby code in an interactive command line interface or from a file.
+
+
+### Where should we be now?
+<!-- call out the skills that are prerequisites -->
+*Before this workshop, developers should already be able to:*
+
+- List JavaScript data types.
+- Recognize and code JavaScript conditionals and loops.
+
+
+## Ruby as a Second (or 4<sup>th</sup>) Language
 
 As we learn Ruby, it's important to revisit how we learned our first language and use that to organize the study of our new language. Learning our second programming language is a process of translating concepts, expressions, and patterns from our familiar language into our new language. Learning our first language involved more identification and comprehension of the knowledge required to implement our first programs. We should begin by organizing this knowledge to build a better understanding as we transition to Ruby.
 
@@ -13,10 +38,10 @@ As we learn Ruby, it's important to revisit how we learned our first language an
 ## Discussion Questions
 
 * What is JavaScript? What does it look like?
-* How did we use JavaScript to build things? How did we build up from the fundamentals of the language?
-* What could possibly be different in another language? How could we change the syntax, but keep the semantics?
+* How did we build up to back-end web development from the fundamentals of JavaScript?
+* What could possibly be different in another language? How could we change the syntax, but keep the most important structures?
 
-## The Beauty of Ruby - Intro (5 mins)
+## The Beauty of Ruby
 
 > <cite>"I hope to see Ruby help every programmer in the world to be productive, and to enjoy programming, and to be happy. That is the primary purpose of Ruby language."</cite>
 > - Ruby creator Yukihiro Matsumoto (a.k.a. "Matz")
@@ -34,18 +59,51 @@ make_a_sentence(['You', 'are', 'already', 'experts'])
 # => "You are already experts!"
 ```
 
-Without knowing anything about Ruby, you can probably sort of understand how all this works. Nice, right?
 
-> **Awesome Detail:** You might notice something interesting – where are the semicolons? You don't need them!
+Without knowing anything about Ruby, you can probably sort of understand how all this works:
 
-> Ruby is lauded for being clean and beautiful - it has less punctuation than JavaScript! Over time, you'll find you have an appreciation for both languages, but for now let's relish forgetting the ';'!
+1. What kind of object is `make_a_sentence`?
+1. What does `def` do?  
+1. What's the purpose of the line that starts with `#`?
+
+You might notice something else interesting – where are the semicolons? You don't need them!
+
+Ruby is lauded for being clean and beautiful - it has less punctuation and fewer reserved words than JavaScript! Over time, you'll find you have an appreciation for both languages, but for now let's relish forgetting the `;`!
 
 
-### Follow along!
+**# Comments**
 
-As we experiment with Ruby syntax, you should follow along and try things yourself. Do what we do, but feel free to mess around and try your own little experiments too.
+It's worth noting that while single-line comments in JS look like this:
 
-We're gonna use PRY, our interactive Ruby shell tool, so we can type some Ruby commands and see exactly what happens in real time, and you can follow along and code.
+```js
+// I'm a comment
+```
+
+Ruby's are like this:
+
+```ruby
+# I'm a comment, too!
+```
+
+A "hash rocket" or "fat arrow" in a comment means the comment is showing off a value that gets returned by a method or expression:
+
+```ruby
+4 + 4
+# => 8
+```
+
+
+
+### Experiment!
+
+Ruby and JavaScript are both **interpreted languages**, meaning there's another program on our computers that knows how to look at code in those languages and translate it into machine-readable code basically line by line as its run. Some ideas will carry over from JavaScript in a really straightforward way.
+
+There are a lot of differences between the JavaScript and Ruby interpreters, though.  A few important examples are that Ruby can't pass around functions, doesn't hoist variables, and has a different system for variable scope.  
+
+We'll see more about each of these differences later.  For now, keep in mind that your intuition could mislead you - you should look at documentation _and_ experiment as you learn Ruby.
+
+
+We're going to use PRY, an interactive Ruby shell tool, so we can type some Ruby commands and see exactly what happens in real time.
 
 Open up your terminal, and from anywhere, type `gem install pry`
 then type `pry`.
@@ -56,9 +114,11 @@ then type `pry`.
 
 1. Create a `.rb` file. Write your code there then run it with `ruby YOUR_FILE_NAME.rb`.
 
-### Data Types
 
-####Review
+
+## Data Types
+
+### Review
 
 1. **What are some data types you have used in JavaScript?**
 
@@ -74,14 +134,22 @@ then type `pry`.
 Now, let's see which of those are similar in Ruby, and which are different.
 
 1. Let's start with `undefined`. Type `undefined` into `pry` and hit enter.  We get an error, so `undefined` isn't defined in Ruby. In fact, Ruby doesn't have an undefined type - we'll just get this same error message if Ruby doesn't know a value for a variable.
+
 1. Try typing `true` or `false` into pry.  We don't get an error, so these must be defined in Ruby. In fact, these are still our **booleans**! Try typing `true.class` and `false.class` to see the Ruby class for each `TrueClass` / `FalseClass`!
+
 1. How about those numbers?!  Try `3.class` and `3.14.class`. Two things to note:
   - numbers with decimals are **Floats**
   - **Integers** are divided into a few classes - here we see `FixNum`
-1. `"hello world"` is still a **String**.
+  <br><br>
+1. `"hello world"` is still a **String**.  Try "hanging a dot" in pry (type `"hello world".` then hit tab a few times) to see the method available for Ruby strings.
+
 1.  `[1,2,3,4]` is still an **Array**.
-1. `{keys: ['some', 'values'] }` is called a **Hash**, but works almost the same as a JavaScript object.
+
+1. `{keys: ['some', 'values'] }` is called a **Hash**, but works almost the same as a JavaScript object.  A key difference is that values inside a Hash *must* be accessed with bracket notation (try it!).
+
 1. Ruby's version of `null` is `nil` (`NilClass`).
+
+1. Ruby has an extra data type called a **Symbol**!  Symbols are like strings, except they only get stored in memory once. JavaScript recently adopted symbols. In both languages, they're often used as the keys inside objects/hashes.
 
 
 Most importantly, **in Ruby, _everything_ is a reference data type**. There are no primitives! That means that each of the above data types have methods & properties just like our JavaScript objects did.
@@ -93,12 +161,14 @@ Most importantly, **in Ruby, _everything_ is a reference data type**. There are 
 - **Integers** are written as `12`
 - **Floats** are written as `9.45`
 - **Strings** are written as `"awesome"`
+- **Symbols** are written as `:awesome`
 - **Arrays** are written as `['x','y','z']`
 - **Hashes** are written as `{key: 'value', thing: true, stuff: [1,2,3]}`
 - **nil** is the equivalent of JavaScript's `null`
 
 
-#### Duck-typing
+### Duck Typing
+<details><summary>If it quacks like an integer... </summary>
 
 Unlike JavaScript, Ruby categorizes numbers as floats or integers. This creates some interesting results! Let's take a look in PRY:
 
@@ -133,8 +203,10 @@ We've seen a similar result with JavaScript:
 
 What happens if you enter the code above into pry?
 
+</details>
 
-#### Converting between Data Types
+### Converting between Data Types
+<details><summary>`"7"` has always wondered what it would be like to be a prime number</summary>
 
 If we want to convert one data type to another in Ruby, there are some built-in methods that we can use. Here are a few examples:
 
@@ -148,23 +220,14 @@ If we want to convert one data type to another in Ruby, there are some built-in 
 => 16
 ```
 
-#### Comments!
+Can you find at least one other example?
 
-It's worth noting that will comments in JS look like this:
+</details>
 
-```js
-// I'm a comment
-```
+### String Interpolation
+<details><summary>Concatenate less.</summary>
 
-Ruby's are like this:
-
-```ruby
-# No, I'm a comment
-```
-
-Since you guys comment your code, that'll be useful!
-
-#### Fun Tip: Our strings have a superpower!
+Our strings have a superpower!
 
 One super awesome trick that you will undoubtedly use all the time comes from our friend, the **String** object.
 
@@ -186,83 +249,100 @@ last = "Franklin"
 "#{first} #{last}" # => Ben Franklin
 ```
 
-So so useful. It works with anything – any code can run in those brackets, and it'll evaluate and turn into a string. Right??
+So so useful. It works with anything – more complex can run in those brackets, and Ruby will evaluate it and use the results in the string, just like we want!
 
-####Try it!
-1. Store your `first_name` in a variable and your `last_name` in another variable.
+Right??  (Try out a few examples with single quotes.)
 
-2. Concatenate your `first_name` and `last_name` variables, and store the output in a new variable called `full_name`.
+</details>
 
-3. Use <a href="http://ruby-doc.org/core-2.2.0/String.html#method-i-split" target="_blank">`.split`</a> to turn your `full_name` variable into an array.
+### Symbols
+<details><summary>What do they mean?</summary>
+We haven't seen symbols before.  Try using Ruby's built in `.object_id` method to see the difference between symbols and strings:
+
+```ruby
+"hi".object_id # => 70359038665560
+"hi".object_id # => 70359036620120
+:hi.object_id  # => 1092828
+:hi.object_id  # => 1092828
+```
+
+Why do you think symbols are used as the keys for hashes?
+</details>
+
+## Variables
+
+Just like JavaScript, **we're gonna need some variables to hold stuff.**
+
+_Unlike_ JavaScript, Ruby's variables don't need to be declared with a special reserved word.
+
+Where you're now used to:
+
+```js
+var genius = "me";
+```
+
+We can skip right to the good stuff:
+
+```ruby
+genius = "me"
+```
+
+#### Local Variables
+
+A local variable in Ruby is written in `lower_snake_case` by convention.
+
+```ruby
+favorite_food = "donuts"
+favorite_food *= 3  # => "donutsdonutsdonuts"
+
+```
+
+We'll talk about Ruby scoping when we go over methods, but know that local variables are  restricted to the  method they're inside of. They can't get their value outside the method, and they are deleted once the method is finished.
+
+
+#### Constants
+
+Usually, we're able to change the value a variable's holding if we so choose – constants are designed for the opposite. Constants are meant to be placeholders that _never change_.
+
+```ruby
+WAR_QUOTE = "War never changes."  
+
+WAR_QUOTE = "What is it good for?" # warning: already initialized constant
+```
+
+Constants are meant to be defined _only once_, so they're often used for things like storing application settings, or other stuff we don't intend to change.
+
+> You'll see many other conventions of Ruby as you learn it!
+
+
+## Research & Experiment
+
+### Printing to the Console
+
+The `console.log` method is an awesome debugging tool in JavaScript. Ruby has three methods that all print out output: `puts`, `p`, and `print`.  Use pry to investigate the differences among these methods. Prepare to explain to the group.
+
+### Conditionals
+
+Conditionals were an important part of JavaScript control flow; we use `if/else if/else` all the time.  What is the Ruby syntax for conditionals? Prepare an example of how you'd use conditionals in Ruby.
+
 
 ### Loops
 
-1. Print (`puts`) "Ruby is awesome!" 50 times. Implement this 3 different ways, using:
-  * <a href="http://www.tutorialspoint.com/ruby/ruby_loops.htm" target="_blank">`while`</a>
-  * <a href="http://www.tutorialspoint.com/ruby/ruby_loops.htm" target="_blank">`for`</a>
-  * <a href="http://ruby-doc.org/core-2.0.0/Integer.html#method-i-times" target="_blank">`.times`</a>
+Repeated behavior means loops!  JavaScript celebrated `for` and `while`. Ruby has many more ways to loop. Take a look at:
 
-2. Save any string to a variable, then create an empty hash called count (`count = {}`). Loop through the string, and count occurrences of each letter. Store the counts in your hash like this example:
-  * For the string `apple`, your `count` hash would look like this: `{a: 1, p: 2, l: 1, e: 1}`.
+1. <a href="http://ruby-doc.org/core-2.0.0/Integer.html#method-i-times" >`.times`</a>:  What is its JavaScript equivalent?  Can you give an example of when you would use this method to loop?
 
-3. Write a program that gets user input from the terminal and `puts` it until the input is the word `"quit"` or `"q"`.
-  * **Hint:** Use `gets.chomp` instead of `gets` to remove trailing `\n`.
+2. <a href="https://ruby-doc.org/core-2.2.0/Array.html#method-i-each">`.each`</a>:
+What is its JavaScript equivalent?  Can you give an example of when you would use this method to loop?
 
-4. Write a program that prints the "bottles of beer on the wall" song:
 
-  ```
-  5 bottles of beer on the wall,
-  5 bottles of beer!
-  Take one down and pass it around,
-  4 bottles of beer on the wall!
-  ...
-  ```
+## Closing Thoughts
 
-  * Use `gets.chomp` to ask the user how many verses they want to hear.
-  * Make sure your song prints "1 **bottle** of beer".
-  * When the song gets to "0 bottles of beer on the wall", it should print "No more bottles of beer on the wall" instead.
-
-## Stretch Challenges
-
-### Iterators: Each
-
-1. Define an array of 4 phrases: `"Hello, world"`, `"OMG"`, `"Ruby"`, and `"Pair Programming"`. Use <a href="http://www.tutorialspoint.com/ruby/ruby_iterators.htm" target="_blank">`.each`</a> to iterate over the array and `puts` each phrase.
-
-2. Iterate over your array of phrases again, but this time, only `puts` the phrase if its length is 5 letters or longer. Otherwise, print a message that the phrase is too short, and include the phrase's index in the message (**Hint:** Look up `.each_with_index`).
-
-### Iterators: Map
-
-1. Write a program that <a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-map" target="_blank">maps</a> an array of numbers to double each number.
-
-2. Write a program that maps an array of words to the reverse of each word. (**Hint:** Look up `.reverse`)
-
-### More Stretch Challenges
-
-1. Create a simple temperature convertor. It should function like the example below:
-
-  ```
-  Type '1' to convert from Celsius to Fahrenheit or '2' to convert from Fahrenheit to Celsius
-  1
-  Enter Celsius temperature:
-  24
-  24 degrees Celsius is equal to 75.2 degrees Fahrenheit
-  ```
-
-2. Create a simple calculator that first asks the user what method they would like to use (addition, subtraction, multiplication, or division), then asks the user for two numbers, printing the result of the method with the two numbers. Here is a sample prompt:
-
-  ```
-  What calculation would you like to do? (add, sub, mult, div)
-  add
-  What is the first number?
-  3
-  What is the second number?
-  6
-  The result is 9
-  ```
+1. What are some strategies you're using to pick up Ruby?  
+1. What resources do you think will be helpful for you?  
 
 ## Docs & Resources
 
-* [Ruby Data Types & Variables](./ruby-data-types-variables.md)
-* <a href="http://ruby-doc.org/core-2.2.0/Array.html" target="_blank">Ruby Docs: Array</a>
-* <a href="http://ruby-doc.org/core-2.2.0/Hash.html" target="_blank">Ruby Docs: Hash</a>
-* <a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Control_Structures" target="_blank">Ruby Control Flow Structures</a>
+* <a href="http://ruby-doc.org/core-2.2.0/Array.html" >Ruby Docs: Array</a>
+* <a href="http://ruby-doc.org/core-2.2.0/Hash.html" >Ruby Docs: Hash</a>
+* <a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Control_Structures" >Ruby Control Flow Structures</a>
