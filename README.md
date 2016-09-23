@@ -10,7 +10,6 @@ Location: SF
 ### Why is this important?
 <!-- framing the "why" in big-picture/real world examples -->
 *This workshop is important because:*
-
 Ruby is a powerful and popular language for server-side web development. It's the foundation for Ruby on Rails, one of the most prolific frameworks in the web.
 
 ### What are the objectives?
@@ -164,7 +163,7 @@ Most importantly, **in Ruby, _everything_ is a reference data type**. There are 
 - **Strings** are written as `"awesome"`
 - **Symbols** are written as `:awesome`
 - **Arrays** are written as `['x','y','z']`
-- **Hashes** are written as `{key: 'value', thing: true, stuff: [1,2,3]}`
+- **Hashes** are written as `{key: 'value', things: true, stuff: [1,2,3]}` or `{:key => 'value'}`
 - **nil** is the equivalent of JavaScript's `null`
 
 
@@ -173,24 +172,14 @@ Most importantly, **in Ruby, _everything_ is a reference data type**. There are 
 
 Unlike JavaScript, Ruby categorizes numbers as floats or integers. This creates some interesting results! Let's take a look in PRY:
 
-What happens if we do:
+What happens if we use pry to calculate `5 / 2`?
 
-```ruby
-5 / 2
-=> 2
-```
+ > Have we broken Ruby? No, we have given ruby two integers (numbers with no decimal places) so ruby gives us an integer back.
 
-Have we broken Ruby? No, we have given ruby two Integers (numbers with no decimal places) so ruby gives us an Integer back.
-
-However, if we divide an Integer by a Float:
-
-```ruby
-5 / 2.0
-=> 2.5
-```
+Compare to what happens when we divide an integer by a float, with `5 / 2.0`.
 
 
-This is called "Type Coercion" also known as "Duck Typing"; Ruby now knows that we want a Float back.
+This is called "Type Coercion" and is also known as "Duck Typing"; Ruby now knows that we want a float back.
 
 If an object quacks like a duck (or acts like a string), just go ahead and treat it as a duck (or a string).
 
@@ -202,7 +191,9 @@ We've seen a similar result with JavaScript:
 => '14'
 ```
 
-What happens if you enter the code above into pry?
+1. What happens if you enter the code above into pry?
+
+1. Expiriment with `%` and integers and floats. 
 
 </details>
 
@@ -269,7 +260,7 @@ We haven't seen symbols before.  Try using Ruby's built in `.object_id` method t
 :hi.object_id  # => 1092828
 ```
 
-Why do you think symbols are used as the keys for hashes?
+1. Why do you think symbols are used as the keys for hashes?
 </details>
 
 ## Variables
