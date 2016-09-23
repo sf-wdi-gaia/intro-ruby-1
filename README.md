@@ -19,7 +19,8 @@ Ruby is a powerful and popular language for server-side web development. It's th
 
 - List Ruby data types.
 - Leverage JavaScript experience to recognize patterns and structures in Ruby.
-- Run Ruby code in an interactive command line interface or from a file.
+- Articulate strategies to learn new programming languages and frameworks.
+- Run Ruby code in an interactive CLI or from a file.
 
 
 ### Where should we be now?
