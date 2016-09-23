@@ -206,7 +206,7 @@ What happens if you enter the code above into pry?
 </details>
 
 ### Converting between Data Types
-<details><summary>`"7"` has always wondered what it would be like to be a prime number</summary>
+<details><summary>`"7"` wonders what it's like to be a number</summary>
 
 If we want to convert one data type to another in Ruby, there are some built-in methods that we can use. Here are a few examples:
 
@@ -220,7 +220,9 @@ If we want to convert one data type to another in Ruby, there are some built-in 
 => 16
 ```
 
-Can you find at least one other example?
+1. Can you find at least one other example?
+
+1. In JavaScript, we saw that `"7" == 7` is `true` but `"7" === 7` is `false`.  What do you get when you try these out in pry?
 
 </details>
 
