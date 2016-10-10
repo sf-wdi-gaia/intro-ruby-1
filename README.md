@@ -46,7 +46,7 @@ As we learn Ruby, it's important to revisit how we learned our first language an
 > <cite>"I hope to see Ruby help every programmer in the world to be productive, and to enjoy programming, and to be happy. That is the primary purpose of Ruby language."</cite>
 > - Ruby creator Yukihiro Matsumoto (a.k.a. "Matz")
 
-One of the things that's important to people who write code in Ruby is how the code _reads_. Rubyists are known for writing code in a way that reads as much like normal English as possible. That helps make it easy to learn for beginners.
+One of the things that's important to people who write code in Ruby is how the code _reads_. Rubyists are known for writing code in a way that ***reads as much like normal English as possible***. That helps make it easy to learn for beginners.
 
 Check out this example:
 
@@ -92,8 +92,6 @@ A "hash rocket" or "fat arrow" in a comment means the comment is showing off a v
 # => 8
 ```
 
-
-
 ### Experiment!
 
 Ruby and JavaScript are both **interpreted languages**, meaning there's another program on our computers that knows how to look at code in those languages and translate it into machine-readable code basically line by line as its run. Some ideas will carry over from JavaScript in a really straightforward way.
@@ -105,7 +103,9 @@ We'll see more about each of these differences later.  For now, keep in mind tha
 
 We're going to use PRY, an interactive Ruby shell tool, so we can type some Ruby commands and see exactly what happens in real time.
 
-Open up your terminal, and from anywhere, type `gem install pry`
+First, you can check if you already have this installed by typing `which pry` in terminal. 
+
+If you don't yet have PRY installed, type `gem install pry`,
 then type `pry`.
 
 *Other options for running ruby code:*
@@ -313,7 +313,10 @@ Constants are meant to be defined _only once_, so they're often used for things 
 
 ### Printing to the Console
 
-The `console.log` method is an awesome debugging tool in JavaScript. Ruby has three methods that all print out output: `puts`, `p`, and `print`.  Use pry to investigate the differences among these methods. Prepare to explain to the group.
+Ruby has three methods that all print out output: `puts`, `p`, and `print`.  Use pry to investigate the differences among these methods. Prepare to explain to the group.
+<details><summary>Check: what's a standard way to debug in JavaScript?</summary>
+The `console.log` method is an awesome debugging tool in JavaScript.
+</details>
 
 ### Conditionals
 
